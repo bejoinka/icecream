@@ -1,0 +1,88 @@
+{
+  "id": "new-york-ny",
+  "name": "New York",
+  "state": "NY",
+  "overview": "New York City is home to the nation's largest immigrant population, with over 3.1 million foreign-born residents comprising nearly 37% of its population. The city has maintained sanctuary policies since 1989 through executive orders that prohibit city employees from sharing immigration status with federal authorities unless required by law. These protections are reinforced by the New York State TRUST Act and the 2014 NYC IDNYC program, which provides municipal identification to all residents regardless of status. Mayor Eric Adams has publicly resisted federal enforcement operations while navigating political pressures, deploying city attorneys to monitor ICE activities and establishing rapid response networks through the Mayor's Office of Immigrant Affairs. The city spent over $5 billion responding to the arrival of approximately 220,000 asylum seekers since 2022, straining shelter capacity and sparking political backlash that has tested the durability of sanctuary commitments.\n\nNew York's immigrant rights infrastructure is among the densest in the nation, with hundreds of legal service providers, advocacy organizations, and community-based groups concentrated in the five boroughs. However, this capacity faces unprecedented demand following recent arrivals. The city's massive bureaucracy operates with significant internal fragmentation across agencies, creating both protective gaps and coordination failures. Federal enforcement operations in New York generate outsized national media attention, which constrains some aggressive tactics but also creates demonstration effects. Neighborhoods like Jackson Heights, Sunset Park, and Washington Heights represent distinct immigrant enclaves with their own community networks, economic ecosystems, and relationships to enforcement visibility.",
+  "pulse": {
+    "federalCooperation": 15,
+    "dataDensity": 52,
+    "politicalCover": 70,
+    "civilSocietyCapacity": 85,
+    "bureaucraticInertia": 80
+  },
+  "neighborhoods": [
+    {
+      "id": "new-york-ny-jackson-heights",
+      "name": "Jackson Heights",
+      "description": "Queens neighborhood known as one of the most ethnically diverse urban areas in the world, with large South Asian, Latin American, and Southeast Asian populations sharing dense commercial corridors along Roosevelt Avenue and 74th Street.",
+      "pulse": {
+        "trust": 75,
+        "suspicion": 50,
+        "enforcementVisibility": 55,
+        "communityDensity": 90,
+        "economicPrecarity": 60
+      }
+    },
+    {
+      "id": "new-york-ny-sunset-park",
+      "name": "Sunset Park",
+      "description": "Brooklyn neighborhood with the city's largest Chinatown alongside significant Mexican and Central American populations, centered around 8th Avenue and 5th Avenue commercial strips with a historically working-class character.",
+      "pulse": {
+        "trust": 65,
+        "suspicion": 55,
+        "enforcementVisibility": 50,
+        "communityDensity": 85,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "new-york-ny-washington-heights",
+      "name": "Washington Heights",
+      "description": "Upper Manhattan neighborhood that has been the center of Dominican life in New York for decades, with strong community institutions, multigenerational families, and a vibrant commercial district along 181st Street.",
+      "pulse": {
+        "trust": 80,
+        "suspicion": 45,
+        "enforcementVisibility": 45,
+        "communityDensity": 88,
+        "economicPrecarity": 55
+      }
+    },
+    {
+      "id": "new-york-ny-corona",
+      "name": "Corona",
+      "description": "Queens neighborhood that became ground zero for asylum seeker arrivals, with the Roosevelt Hotel serving as the city's primary intake center and local residents navigating sudden demographic shifts alongside established Mexican and Ecuadorian communities.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 65,
+        "enforcementVisibility": 70,
+        "communityDensity": 75,
+        "economicPrecarity": 75
+      }
+    },
+    {
+      "id": "new-york-ny-east-harlem",
+      "name": "East Harlem",
+      "description": "El Barrio has been the historic heart of Puerto Rican and Latino New York, now experiencing rapid gentrification alongside its role as a hub for immigrant advocacy organizations and community health services.",
+      "pulse": {
+        "trust": 70,
+        "suspicion": 50,
+        "enforcementVisibility": 40,
+        "communityDensity": 80,
+        "economicPrecarity": 70
+      }
+    },
+    {
+      "id": "new-york-ny-flushing",
+      "name": "Flushing",
+      "description": "Queens neighborhood that is the largest and fastest-growing Asian community in the city, with Chinese, Korean, and South Asian populations creating overlapping commercial and social networks along Main Street.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 40,
+        "enforcementVisibility": 35,
+        "communityDensity": 82,
+        "economicPrecarity": 50
+      }
+    }
+  ],
+  "playabilityRationale": "New York offers the most complex sanctuary city environment in the game, combining the nation's largest immigrant population with the densest civil society infrastructure and the most unwieldy bureaucracy. The sheer scale creates unique dynamics: enforcement actions generate immediate national attention, legal resources are abundant but overwhelmed, and community networks span dozens of languages and nationalities. Players experience the tension between formal protections that are among the strongest in the country and the practical challenges of navigating a system where no single agency has complete information or authority. The neighborhood diversity enables stories ranging from Jackson Heights' polyglot commercial streets to Corona's asylum seeker crisis to Washington Heights' multigenerational Dominican community. The city's bureaucratic fragmentation cuts both ways, creating gaps that both protect families from data sharing and prevent them from accessing services. New York's role as the national symbol of immigration means that federal-city conflicts play out with maximum visibility, making political cover simultaneously strong and fragile."
+}

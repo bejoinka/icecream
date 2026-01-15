@@ -1,0 +1,76 @@
+{
+  "id": "columbus-oh",
+  "name": "Columbus",
+  "state": "OH",
+  "overview": "Columbus is home to America's second-largest Somali population, with an estimated 45,000-65,000 Somali Americans concentrated along the Morse Road corridor in Northland. The city has never formally declared itself a sanctuary city, but Mayor Andrew Ginther's 2017 executive order prohibits city resources from being used to detect or apprehend people solely based on immigration status. In December 2025, Operation Buckeye brought a dramatic escalation of ICE enforcement, with arrests tripling compared to the same period in 2024. The crackdown arrived immediately after Trump administration rhetoric targeting Somali communities, intensifying fears that Columbus was being singled out. The Catholic Diocese excused parishioners from Christmas Mass attendance due to enforcement fears, while businesses reported customers too afraid to venture outside.\n\nColumbus sits in a complex political position as a blue city in a crucial swing state, with a Republican governor who has pledged to cooperate with federal deportation efforts while defending the legal status of Haitian migrants in nearby Springfield. The Franklin County Sheriff's Office has declined to sign 287(g) agreements with ICE, maintaining distance from direct immigration enforcement even as surrounding counties have partnered with federal agents. The city's robust refugee resettlement infrastructure, built over three decades by organizations like CRIS, ETSS, and Jewish Family Services, faces existential threat from federal funding freezes that have already forced mass layoffs. The Somali, Bhutanese, Nepali, and Latino communities who transformed declining neighborhoods like Northland and the Hilltop into vibrant commercial corridors now navigate an environment where carrying a passport has become routine for naturalized citizens.",
+  "pulse": {
+    "federalCooperation": 52,
+    "dataDensity": 68,
+    "politicalCover": 48,
+    "civilSocietyCapacity": 62,
+    "bureaucraticInertia": 58
+  },
+  "neighborhoods": [
+    {
+      "id": "columbus-oh-northland-morse-road",
+      "name": "Northland / Morse Road",
+      "description": "The heart of Columbus's Somali community, where Global Mall and hundreds of immigrant-owned businesses transformed a declining commercial corridor after the 2002 Northland Mall closure. Over 900 refugee-owned businesses employ 20,000+ people, but Operation Buckeye enforcement has emptied parking lots and forced customers to stay home.",
+      "pulse": {
+        "trust": 75,
+        "suspicion": 70,
+        "enforcementVisibility": 80,
+        "communityDensity": 90,
+        "economicPrecarity": 55
+      }
+    },
+    {
+      "id": "columbus-oh-north-linden",
+      "name": "North Linden",
+      "description": "Diverse neighborhood with significant Somali, Ghanaian, and other African immigrant populations undergoing major revitalization through the $25+ million 614 for Linden initiative. Home to 30,000+ residents navigating the tension between neighborhood improvement and displacement fears.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 55,
+        "enforcementVisibility": 65,
+        "communityDensity": 75,
+        "economicPrecarity": 70
+      }
+    },
+    {
+      "id": "columbus-oh-hilltop",
+      "name": "Hilltop",
+      "description": "West Columbus neighborhood with the city's most established Latino community, primarily Mexican immigrants who settled for affordable housing and proximity to jobs. Our Lady of Guadalupe Center provides essential services including legal consultations, but residents face isolation and tensions with other low-income communities.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 60,
+        "enforcementVisibility": 55,
+        "communityDensity": 70,
+        "economicPrecarity": 80
+      }
+    },
+    {
+      "id": "columbus-oh-whitehall",
+      "name": "Whitehall",
+      "description": "Independent city east of Columbus where 15% of residents are foreign-born and 20% speak a language other than English at home. A Latino hub where over 10% of the population speaks Spanish, Whitehall has become an affordable alternative to Columbus proper for immigrant families.",
+      "pulse": {
+        "trust": 50,
+        "suspicion": 50,
+        "enforcementVisibility": 50,
+        "communityDensity": 65,
+        "economicPrecarity": 75
+      }
+    },
+    {
+      "id": "columbus-oh-franklinton",
+      "name": "Franklinton",
+      "description": "Rapidly gentrifying neighborhood west of downtown where refugee resettlement agencies have placed families for decades due to affordable housing. Now caught between arts district development and longtime immigrant residents, with CRIS and other organizations providing critical support amid federal funding uncertainty.",
+      "pulse": {
+        "trust": 45,
+        "suspicion": 45,
+        "enforcementVisibility": 45,
+        "communityDensity": 55,
+        "economicPrecarity": 70
+      }
+    }
+  ],
+  "playabilityRationale": "Columbus presents a unique gameplay environment as a major refugee resettlement hub in a politically volatile swing state. The Somali community's economic success story along Morse Road, where immigrants revitalized an abandoned commercial district into a thriving hub of 900+ businesses, contrasts starkly with Operation Buckeye's sudden enforcement surge that emptied those same streets. Players navigate a city where formal sanctuary protections are weaker than Chicago or San Francisco, but the Franklin County Sheriff's refusal to sign 287(g) agreements and the Columbus Police Department's non-cooperation policy create meaningful friction with federal enforcement. The looming TPS terminations for Somali residents add urgency, while the crisis in nearby Springfield over Haitian migrants demonstrates how quickly communities can become national political flashpoints. The defunding of resettlement organizations like ETSS, which laid off its entire 17-person department, shows how federal policy shifts cascade through local support networks. Columbus's bureaucratic systems are modern but not sanctuary-hardened, creating uncertainty about data sharing. Players must weigh the strong community bonds in neighborhoods like Northland against the political exposure of being targeted by Trump administration rhetoric specifically singling out Somali communities."
+}

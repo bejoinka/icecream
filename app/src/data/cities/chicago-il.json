@@ -1,0 +1,76 @@
+{
+  "id": "chicago-il",
+  "name": "Chicago",
+  "state": "IL",
+  "overview": "Chicago is one of America's oldest sanctuary cities, with its Welcoming City Ordinance dating back to 1985. The city operates under both municipal protections and the Illinois TRUST Act, which prohibits local law enforcement from coordinating with federal Immigration and Customs Enforcement without criminal warrants. Mayor Brandon Johnson has aggressively defended these policies, testifying before Congress in March 2025 and signing multiple executive orders including the 'Protecting Chicago' initiative and an 'ICE Free Zone' order prohibiting federal agents from using city-owned properties for civil immigration enforcement. The Trump administration has filed lawsuits against Chicago, Cook County, and Illinois over these policies, while deploying National Guard troops to federal buildings.\n\nBetween August 2022 and mid-2024, over 50,000 migrants arrived in Chicago via buses from Texas, straining the city's shelter capacity to its breaking point. At the peak, migrants slept on floors of O'Hare Airport and police stations. The city spent over $540 million on housing and services before transitioning to a 'One System Initiative' in January 2025 that merged migrant shelters with the existing homeless system. Chicago's immigrant community of approximately 1.7 million residents in the metro area now faces intensified federal enforcement operations that have arrested over 1,000 people, while neighborhoods like Little Village and Pilsen report dramatic drops in foot traffic as families stockpile groceries and avoid public spaces.",
+  "pulse": {
+    "federalCooperation": 18,
+    "dataDensity": 58,
+    "politicalCover": 75,
+    "civilSocietyCapacity": 72,
+    "bureaucraticInertia": 75
+  },
+  "neighborhoods": [
+    {
+      "id": "chicago-il-pilsen",
+      "name": "Pilsen",
+      "description": "Historically working-class gateway neighborhood on the Lower West Side, originally Czech and now predominantly Latino, that hosted the city's largest migrant shelter (2,300+ residents) before its closure in October 2024 following measles and tuberculosis outbreaks.",
+      "pulse": {
+        "trust": 70,
+        "suspicion": 45,
+        "enforcementVisibility": 55,
+        "communityDensity": 85,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "chicago-il-little-village",
+      "name": "Little Village",
+      "description": "La Villita is the largest Mexican community in the Midwest and the city's biggest Mexican commercial corridor, now experiencing dramatic foot traffic decreases as rumors of ICE raids cause residents to stockpile groceries and stay indoors.",
+      "pulse": {
+        "trust": 75,
+        "suspicion": 55,
+        "enforcementVisibility": 70,
+        "communityDensity": 90,
+        "economicPrecarity": 70
+      }
+    },
+    {
+      "id": "chicago-il-brighton-park",
+      "name": "Brighton Park",
+      "description": "Working-class Southwest Side neighborhood where a proposed $65 million migrant base camp was canceled over toxic contamination, now home to an active rapid response network that has reached over 1,000 residents through door-to-door canvassing.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 50,
+        "enforcementVisibility": 60,
+        "communityDensity": 75,
+        "economicPrecarity": 70
+      }
+    },
+    {
+      "id": "chicago-il-albany-park",
+      "name": "Albany Park",
+      "description": "Known as 'Chicago's gateway to the world,' this Northwest Side neighborhood is one of the most ethnically diverse in America with over 40 languages spoken in schools and storefronts reflecting generations of immigrant waves.",
+      "pulse": {
+        "trust": 65,
+        "suspicion": 40,
+        "enforcementVisibility": 40,
+        "communityDensity": 80,
+        "economicPrecarity": 55
+      }
+    },
+    {
+      "id": "chicago-il-chinatown",
+      "name": "Chinatown",
+      "description": "Expanding South Side enclave where approximately 10% of residents are undocumented, bucking national trends of Chinatown decline with steady growth and cultural district designation, though facing misinformation campaigns and political polarization.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 45,
+        "enforcementVisibility": 35,
+        "communityDensity": 85,
+        "economicPrecarity": 50
+      }
+    }
+  ],
+  "playabilityRationale": "Chicago offers a distinctive gameplay environment as a major sanctuary city grappling with both historic machine politics and the aftermath of the largest migrant influx in recent memory. The layered protections of the 1985 Welcoming City Ordinance, state TRUST Act, and Mayor Johnson's aggressive executive orders provide strong formal political cover, but this is constantly tested by federal lawsuits and National Guard deployments. The city's immigrant rights infrastructure is dense but stretched thin after absorbing 50,000+ arrivals. Players navigate the contrast between neighborhoods like Little Village, where tight-knit community networks operate alongside visible fear and business decline, and Albany Park's remarkable diversity where 40+ languages create complex cross-cultural dynamics. The Brighton Park storyline of canceled shelters and toxic contamination reveals how even supportive policies can fail immigrant communities. Chicago's bureaucratic inertia cuts both ways: it slows both helpful reforms and harmful cooperation. The ongoing legal battles between city, state, and federal government create constant uncertainty about what protections will hold."
+}

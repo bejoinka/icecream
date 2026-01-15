@@ -1,0 +1,76 @@
+{
+  "id": "miami-fl",
+  "name": "Miami",
+  "state": "FL",
+  "overview": "Miami is the quintessential gateway city for Latin America and the Caribbean, where over 70% of residents speak Spanish at home and the foreign-born population exceeds 50% in Miami-Dade County. Unlike most major U.S. cities, Miami's immigrant population is politically powerful, with Cuban Americans in particular wielding significant electoral influence that has historically shaped both local and national policy. This political clout created unique protections for certain immigrant groups while leaving others, particularly Haitians, Central Americans, and South Americans without Cuban Adjustment Act pathways, in far more precarious positions. Governor Ron DeSantis's aggressive anti-sanctuary legislation, including SB 1718 (2023) which mandates E-Verify for employers with 25+ workers and criminalizes transporting undocumented individuals, has fundamentally altered the landscape. Miami-Dade officially ended its sanctuary county policy in 2017 under threat of losing federal funding, and local law enforcement now routinely cooperates with ICE detainers.\n\nMiami's enforcement dynamics are uniquely stratified by national origin and immigration pathway. Cuban arrivals have historically benefited from special status that allowed them to adjust to permanent residency after one year, creating a large population of naturalized citizens and legal residents who form the backbone of Miami's political establishment. Haitian immigrants, by contrast, have faced decades of differential treatment, with Temporary Protected Status repeatedly threatened and community members subject to aggressive enforcement and deportation. Venezuelan, Nicaraguan, and other recent arrivals occupy an uncertain middle ground, with some benefiting from humanitarian parole while others remain undocumented. This creates a complex social fabric where immigrant communities are simultaneously powerful political actors and vulnerable enforcement targets, depending entirely on their national origin and legal pathway.",
+  "pulse": {
+    "federalCooperation": 72,
+    "dataDensity": 65,
+    "politicalCover": 35,
+    "civilSocietyCapacity": 70,
+    "bureaucraticInertia": 55
+  },
+  "neighborhoods": [
+    {
+      "id": "miami-fl-little-havana",
+      "name": "Little Havana",
+      "description": "The historic heart of Cuban Miami, centered on Calle Ocho (SW 8th Street), where cigar shops, domino parks, and Cuban restaurants anchor a community that has welcomed successive waves of Latin American immigrants even as original Cuban residents have dispersed to the suburbs. Now increasingly Central American and South American alongside longtime Cuban families.",
+      "pulse": {
+        "trust": 70,
+        "suspicion": 45,
+        "enforcementVisibility": 40,
+        "communityDensity": 85,
+        "economicPrecarity": 55
+      }
+    },
+    {
+      "id": "miami-fl-hialeah",
+      "name": "Hialeah",
+      "description": "The second-largest city in Miami-Dade County with over 220,000 residents, Hialeah is 96% Hispanic and 73% foreign-born, making it one of the most concentrated immigrant communities in the United States. The working-class city of warehouses, small manufacturers, and dense housing is often called 'the city where Cubans went to become Americans' but now houses significant Nicaraguan and Venezuelan populations alongside longtime Cuban residents.",
+      "pulse": {
+        "trust": 75,
+        "suspicion": 50,
+        "enforcementVisibility": 45,
+        "communityDensity": 95,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "miami-fl-little-haiti",
+      "name": "Little Haiti",
+      "description": "Miami's historic Haitian neighborhood north of downtown, centered on NE 2nd Avenue, faces acute pressure from both gentrification and enforcement. The community has experienced decades of differential treatment compared to Cuban arrivals, with TPS repeatedly threatened and aggressive deportation campaigns. Caribbean Marketplace and Notre Dame d'Haiti Catholic Church remain community anchors amid rapid displacement.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 80,
+        "enforcementVisibility": 65,
+        "communityDensity": 75,
+        "economicPrecarity": 80
+      }
+    },
+    {
+      "id": "miami-fl-doral",
+      "name": "Doral",
+      "description": "Known as 'Doralzuela' for its massive Venezuelan population, this western Miami-Dade suburb has become the center of Venezuelan exile life in the United States. Middle-class professionals, business owners, and recent arrivals fleeing the Maduro regime have created a Venezuelan infrastructure of restaurants, media outlets, and political organizations, though legal status varies widely from humanitarian parole to undocumented.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 55,
+        "enforcementVisibility": 35,
+        "communityDensity": 70,
+        "economicPrecarity": 50
+      }
+    },
+    {
+      "id": "miami-fl-homestead",
+      "name": "Homestead / Florida City",
+      "description": "The agricultural southern edge of Miami-Dade, where farmworkers from Mexico, Central America, and Haiti harvest tomatoes, avocados, and tropical fruits. The area's isolation, poverty, and proximity to the Homestead detention center create an environment of heightened enforcement visibility and economic vulnerability, with workers dependent on agricultural employers who may themselves face E-Verify audits.",
+      "pulse": {
+        "trust": 40,
+        "suspicion": 75,
+        "enforcementVisibility": 80,
+        "communityDensity": 60,
+        "economicPrecarity": 90
+      }
+    }
+  ],
+  "playabilityRationale": "Miami offers a uniquely stratified gameplay environment where national origin determines nearly everything about an immigrant family's prospects. The Cuban political establishment's power creates a city where some immigrants are pillars of the community while others face aggressive enforcement, often living side by side in the same neighborhoods. Players navigating Miami must understand that the 'rules' are different depending on where their family came from: Cuban arrivals can leverage political connections and community institutions that are largely closed to Haitians or Central Americans. The contrast between Little Havana's relative security and Little Haiti's vulnerability illustrates how the same city can be sanctuary and hunting ground simultaneously. Florida's hostile state-level policy under SB 1718 creates additional tension, as even sympathetic local officials and employers face criminal penalties for providing assistance. The Homestead detention center's presence in the metropolitan area adds constant psychological pressure. Miami's stories are about differential treatment, about watching neighbors with similar circumstances face radically different outcomes based on nationality, and about building solidarity across national-origin divides that the system deliberately creates. The city's dense immigrant infrastructure, from legal aid organizations to ethnic media to religious institutions, provides resources for survival, but accessing them requires navigating a landscape where trust must be carefully calibrated to the specific community and legal pathway involved."
+}

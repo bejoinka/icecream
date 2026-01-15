@@ -1,0 +1,76 @@
+{
+  "id": "houston-tx",
+  "name": "Houston",
+  "state": "TX",
+  "overview": "Houston is the most ethnically diverse metropolitan area in the United States, with over 1.3 million foreign-born residents in Harris County alone. The city's uniquely laissez-faire approach extends beyond its famous lack of zoning to its historically hands-off stance on immigration enforcement, but this has been fundamentally constrained by Texas state law. Senate Bill 4, passed in 2017, explicitly prohibits sanctuary city policies and mandates local cooperation with federal immigration authorities. The newer 2023 SB4 attempted to make unauthorized border crossing a state crime, though it remains mired in federal court challenges. Mayor John Whitmire acknowledged in late 2025 that Houston police have called ICE on over 100 individuals since the start of the second Trump administration, despite months of public denials about city involvement in immigration enforcement.\n\nThe city's immigrant geography is sprawling and decentralized, reflecting Houston's car-dependent, apartment-complex-dominated landscape. Unlike cities with concentrated ethnic enclaves, Houston's immigrant communities are dispersed across vast super neighborhoods from Gulfton's dense Central American and Ethiopian populations to Alief's remarkable pan-Asian and West African diversity to Second Ward's historic Mexican-American core. Civil society capacity is relatively limited compared to peer cities, with fewer immigrant rights organizations despite the enormous immigrant population. Groups like FIEL Houston and RAICES provide crucial legal services, but Houston's wins on immigrant rights have required innovative coalitions to overcome the structural disadvantage of operating under hostile state law while maintaining relationships with a city government that quietly cooperates with federal enforcement.",
+  "pulse": {
+    "federalCooperation": 62,
+    "dataDensity": 58,
+    "politicalCover": 42,
+    "civilSocietyCapacity": 65,
+    "bureaucraticInertia": 68
+  },
+  "neighborhoods": [
+    {
+      "id": "houston-tx-gulfton",
+      "name": "Gulfton",
+      "description": "Called the 'Ellis Island of current time,' Gulfton is Houston's most densely populated neighborhood with approximately 90 apartment complexes housing a predominantly Central American population alongside growing Ethiopian, Middle Eastern, and other Latin American communities. The 71% Hispanic neighborhood has long served as a first stop for newcomers, with established networks of services and mutual aid, though it also ranks among the most dangerous areas in Houston for pedestrian safety.",
+      "pulse": {
+        "trust": 65,
+        "suspicion": 60,
+        "enforcementVisibility": 55,
+        "communityDensity": 90,
+        "economicPrecarity": 80
+      }
+    },
+    {
+      "id": "houston-tx-spring-branch",
+      "name": "Spring Branch",
+      "description": "A sprawling northwest Houston area with significant non-citizen Hispanic populations and growing Asian immigrant communities. Spring Branch ISD serves as a hub for immigrant student services, while organizations like Woori Juntos work specifically with Asian and immigrant community members on disaster preparedness and community resilience.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 50,
+        "enforcementVisibility": 50,
+        "communityDensity": 70,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "houston-tx-second-ward",
+      "name": "Second Ward / East End",
+      "description": "One of Houston's oldest Hispanic neighborhoods dating to the 19th century, the Second Ward anchors the broader East End district with deep Mexican-American roots tied to the Port of Houston's industrial history. Vibrant murals, family-owned businesses, and institutions like Ninfa's on Navigation reflect generations of cultural continuity, though gentrification pressures and economic shifts are transforming the area.",
+      "pulse": {
+        "trust": 70,
+        "suspicion": 45,
+        "enforcementVisibility": 45,
+        "communityDensity": 80,
+        "economicPrecarity": 60
+      }
+    },
+    {
+      "id": "houston-tx-greenspoint",
+      "name": "Greenspoint",
+      "description": "Known locally by the grim nickname 'Gunspoint,' this northern Houston neighborhood of 65,000 residents is dominated by aging apartment complexes that house low-income working families, many of them immigrants. Median household income is barely half the city average. Recent revitalization efforts by the management district have significantly reduced crime, and community leaders report children can now play safely in apartment complex courtyards, but the area remains economically precarious.",
+      "pulse": {
+        "trust": 45,
+        "suspicion": 65,
+        "enforcementVisibility": 60,
+        "communityDensity": 65,
+        "economicPrecarity": 85
+      }
+    },
+    {
+      "id": "houston-tx-alief",
+      "name": "Alief",
+      "description": "Houston's largest and most remarkably diverse neighborhood, with over half its 105,000 residents born in another country and two-thirds speaking a language other than English at home. The population is roughly 42% Hispanic, 27% Black, 23% Asian, and 6% white, with significant Nigerian, Vietnamese, Chinese, and other communities coexisting in a landscape of strip malls, apartment complexes, and the nearby Chinatown commercial district. Despite losing nearly 8,000 residents since 2018, Alief remains a global village where working-class immigrant families found affordable housing for decades.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 55,
+        "enforcementVisibility": 50,
+        "communityDensity": 85,
+        "economicPrecarity": 70
+      }
+    }
+  ],
+  "playabilityRationale": "Houston offers a uniquely challenging gameplay environment as the nation's most diverse city operating under some of its most hostile state-level immigration policy. The tension between Houston's historical laissez-faire approach and Texas's aggressive enforcement mandates creates constant uncertainty. Unlike sanctuary cities where political cover is explicit, Houston's protections are informal, fragile, and subject to sudden reversals, as demonstrated by the mayor's quiet admission of over 100 ICE referrals despite public denials. The city's sprawling geography means immigrant communities are dispersed across vast distances rather than concentrated in defensible enclaves, making coordination difficult but also making targeted enforcement harder. Houston's famous lack of zoning contributes to a chaotic urban landscape where apartment complexes house immigrant families in unexpected locations, creating both vulnerability and invisibility. Players must navigate the gap between the city's diverse, welcoming reputation and the reality of operating under SB4, where even sympathetic local officials have limited power to resist state mandates. The relatively thin civil society infrastructure compared to cities like Chicago or Los Angeles means families cannot rely on dense organizational networks and must build their own survival strategies across Houston's car-dependent landscape."
+}

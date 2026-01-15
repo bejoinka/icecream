@@ -1,0 +1,76 @@
+{
+  "id": "detroit-mi",
+  "name": "Detroit",
+  "state": "MI",
+  "overview": "Detroit anchors the largest Arab-American and Middle Eastern population in the United States, with the adjacent city of Dearborn serving as the heart of this community where 29% of residents are foreign-born. The region also hosts significant Chaldean (Iraqi Christian), Bangladeshi, Latino, and Yemeni populations across interconnected neighborhoods that straddle the Detroit-Hamtramck border. Unlike states with formal sanctuary laws, Michigan operates through a patchwork of local 'welcoming city' policies, with Detroit's anti-profiling ordinances limiting but not prohibiting cooperation with federal immigration authorities. Governor Whitmer's administration has ended contracts with ICE detention facilities and expressed opposition to aggressive enforcement, but declined to champion state-level protective legislation like the Drive SAFE bills that would provide identification to undocumented residents.\n\nThe Detroit region's proximity to Canada creates unique enforcement dynamics at the Ambassador Bridge and Detroit-Windsor Tunnel, where over 200 people were detained between January and March 2025 alone, with 90% having accidentally taken wrong exits onto the bridge approaches. The 2025 Trump administration immigration crackdown has paralyzed immigrant communities throughout metro Detroit, with the Arab American Civil Rights League reporting steady streams of panicked calls and ICE activity confirmed from Ann Arbor to Dearborn Heights. The Chaldean community faces particular vulnerability after 40 arrests in one weekend and years of legal battles over deportations to Iraq, which community leaders describe as 'death sentences' for those unfamiliar with the country. Know Your Rights trainings conducted in English, Spanish, and Arabic have spread rapidly through churches, mosques, and community centers as families prepare for potential encounters.",
+  "pulse": {
+    "federalCooperation": 48,
+    "dataDensity": 52,
+    "politicalCover": 62,
+    "civilSocietyCapacity": 75,
+    "bureaucraticInertia": 58
+  },
+  "neighborhoods": [
+    {
+      "id": "detroit-mi-dearborn",
+      "name": "Dearborn",
+      "description": "America's largest Arab-American population center where approximately 54.5% of 109,000 residents identify as Middle Eastern or North African. Home to the Arab American Civil Rights League headquarters and site of urgent Know Your Rights events following the 2025 enforcement surge. The city voted for Trump in 2024 over Gaza policy concerns, creating an ironic tension as the same community now faces heightened deportation threats.",
+      "pulse": {
+        "trust": 65,
+        "suspicion": 60,
+        "enforcementVisibility": 65,
+        "communityDensity": 90,
+        "economicPrecarity": 50
+      }
+    },
+    {
+      "id": "detroit-mi-southwest-mexicantown",
+      "name": "Southwest Detroit / Mexicantown",
+      "description": "Detroit's Latino heart along West Vernor Highway, reinvigorated by Mexican and Central American immigration waves since the 1990s after generations of Mexican-American families first established the community in the 1920s. Now home to over 1,000 Latino-owned small businesses and active Know Your Rights networks through the Southwest Detroit Immigrant and Refugee Center. The neighborhood has successfully prevented ICE raids in the past through community preparedness training.",
+      "pulse": {
+        "trust": 70,
+        "suspicion": 50,
+        "enforcementVisibility": 55,
+        "communityDensity": 85,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "detroit-mi-hamtramck-banglatown",
+      "name": "Hamtramck / Banglatown",
+      "description": "A densely packed 2.1 square mile city enclave within Detroit where over 44% of 27,000 residents are foreign-born. The Bangladeshi population of 15,000-20,000 spans both Hamtramck and adjacent North Detroit in the neighborhood known as Banglatown. Mayor Amer Ghalib endorsed Trump in 2024, but retired police officers report the Department of Homeland Security is recruiting personnel familiar with the area for potential enforcement operations.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 55,
+        "enforcementVisibility": 50,
+        "communityDensity": 95,
+        "economicPrecarity": 60
+      }
+    },
+    {
+      "id": "detroit-mi-chaldean-corridor",
+      "name": "Sterling Heights / Chaldean Corridor",
+      "description": "The northern suburbs of Sterling Heights, Warren, and Troy contain the largest Chaldean (Iraqi Christian) population outside Iraq, with an estimated 160,000 in metro Detroit. The community faces acute deportation fears after 40 arrests in one weekend and the 2019 death of Jimmy Aldaoud following deportation to a country he had never lived in. A 2024 ACLU settlement prevented mass deportation of 1,400 Chaldeans, but enforcement pressure has intensified under the new administration.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 70,
+        "enforcementVisibility": 60,
+        "communityDensity": 75,
+        "economicPrecarity": 45
+      }
+    },
+    {
+      "id": "detroit-mi-corktown",
+      "name": "Corktown / North Corktown",
+      "description": "Detroit's oldest neighborhood, named for Irish immigrants from County Cork, has absorbed successive waves of German, Maltese, Mexican, and Latino residents since the 19th century. Now among Detroit's most racially diverse areas with 62% Black, 24% White, and 9% Hispanic residents. Gentrification pressures from Ford's Michigan Central Station development threaten displacement of long-term immigrant families while a $30 million HUD grant attempts to preserve affordable housing.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 40,
+        "enforcementVisibility": 35,
+        "communityDensity": 65,
+        "economicPrecarity": 55
+      }
+    }
+  ],
+  "playabilityRationale": "Detroit offers a distinctive gameplay environment as a major immigration hub without formal sanctuary protections, relying instead on patchwork local policies and an exceptionally strong civil society network forged through decades of Arab-American, Chaldean, Latino, and South Asian community organizing. The city's unique position on the Canadian border creates high-stakes scenarios around the Ambassador Bridge, where wrong turns can lead to detention. Players navigate the political complexity of communities that voted for Trump over foreign policy concerns now facing his administration's enforcement surge. The contrast between Dearborn's organized Arab-American advocacy infrastructure and the Chaldean community's vulnerability to deportation creates distinct neighborhood dynamics. Michigan's moderate political cover under Governor Whitmer provides some buffer but lacks the formal protections of sanctuary states. The Hamtramck enclave's extraordinary density and the Southwest Detroit networks' proven success in preventing past raids offer models of community resistance, while gentrifying Corktown represents the tension between historic immigrant neighborhoods and displacement pressures."
+}

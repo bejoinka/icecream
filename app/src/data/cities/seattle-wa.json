@@ -1,0 +1,76 @@
+{
+  "id": "seattle-wa",
+  "name": "Seattle",
+  "state": "WA",
+  "overview": "Seattle stands as one of the nation's most protective sanctuary cities, backed by both local 'Welcoming City' ordinances (since 2003) and Washington's statewide Keep Washington Working Act (2019). The city refuses ICE detainer requests without judicial warrants, prohibits police from making arrests based solely on immigration status, and bars city employees from asking about immigration status. In 2025, Mayor Harrell signed executive orders creating a citywide task force and expanding the Office of Immigrant and Refugee Affairs budget by $4 million for legal services and immigrant safety programs. The DOJ formally designated Seattle a 'sanctuary jurisdiction' in August 2025, threatening $120 million in federal funding.\n\nYet Seattle's sanctuary status coexists uneasily with its identity as a global tech hub. Amazon, Microsoft, and other giants sponsor thousands of H-1B visas annually, creating a two-tiered immigrant experience: highly-paid tech workers navigating visa backlogs while working-class immigrants in South Seattle face intensifying ICE operations. Enforcement surged dramatically in late 2025, with ICE setting a goal of 30 daily arrests across the Pacific Northwest (double the 2024 rate). Deportation flights from Boeing Field increased from one per week to three or four, and community events including the Duwamish River Festival were cancelled due to safety concerns. The tension between progressive politics, tech industry wealth, and federal enforcement pressure makes Seattle a city where sanctuary protections are strong on paper but increasingly tested in practice.",
+  "pulse": {
+    "federalCooperation": 25,
+    "dataDensity": 82,
+    "politicalCover": 62,
+    "civilSocietyCapacity": 75,
+    "bureaucraticInertia": 45
+  },
+  "neighborhoods": [
+    {
+      "id": "seattle-wa-rainier-valley",
+      "name": "Rainier Valley",
+      "description": "A historically diverse corridor stretching from Mount Baker to Rainier Beach, home to East African, Vietnamese, and Latino families, though facing rapid gentrification that has decreased Black and Asian populations in recent years.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 50,
+        "enforcementVisibility": 45,
+        "communityDensity": 70,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "seattle-wa-beacon-hill",
+      "name": "Beacon Hill",
+      "description": "One of Seattle's most racially diverse neighborhoods with deep roots in Italian, Japanese, and more recently Vietnamese and Filipino immigrant communities, now anchored by the Juneau Street Resilience Hub supporting BIPOC residents.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 45,
+        "enforcementVisibility": 40,
+        "communityDensity": 75,
+        "economicPrecarity": 55
+      }
+    },
+    {
+      "id": "seattle-wa-south-park",
+      "name": "South Park",
+      "description": "A working-class neighborhood where nearly half the population is Latino, served by Villa Comunitaria and other organizations, but designated 'High Risk of Displacement' by the city and facing cancelled cultural events due to ICE raid concerns.",
+      "pulse": {
+        "trust": 50,
+        "suspicion": 65,
+        "enforcementVisibility": 55,
+        "communityDensity": 80,
+        "economicPrecarity": 75
+      }
+    },
+    {
+      "id": "seattle-wa-international-district",
+      "name": "Chinatown-International District",
+      "description": "The last remaining Chinatown in the Pacific Northwest, encompassing Chinatown, Japantown, and Little Saigon, named one of America's 11 Most Endangered Historic Places while facing transit development threats and anti-Asian hate crime concerns.",
+      "pulse": {
+        "trust": 45,
+        "suspicion": 55,
+        "enforcementVisibility": 50,
+        "communityDensity": 85,
+        "economicPrecarity": 60
+      }
+    },
+    {
+      "id": "seattle-wa-white-center",
+      "name": "White Center",
+      "description": "An unincorporated area just south of Seattle city limits with one of the region's highest immigrant populations, including Cambodian, Vietnamese, Somali, and Latino communities, where county rather than city sanctuary protections apply.",
+      "pulse": {
+        "trust": 45,
+        "suspicion": 60,
+        "enforcementVisibility": 60,
+        "communityDensity": 75,
+        "economicPrecarity": 70
+      }
+    }
+  ],
+  "playabilityRationale": "Seattle offers a compelling paradox for gameplay: one of America's strongest sanctuary frameworks tested by one of its most aggressive federal enforcement campaigns. Players navigate the gap between policy and practice, where mayoral executive orders and statewide laws provide formal protections, but ICE has doubled its arrest targets and deportation flights have quadrupled. The tech industry adds unique dynamics: H-1B workers face different but intersecting vulnerabilities, while Amazon and Microsoft's presence means unprecedented data infrastructure and surveillance capacity coexist with progressive politics. South Seattle's diverse neighborhoods provide distinct community dynamics, from the organized Latino networks in South Park to the historic but threatened Chinatown-International District, while the 2025 electoral shift (Harrell's defeat) signals political uncertainty. The cancellation of cultural festivals due to ICE concerns creates emotionally resonant scenarios where community celebration itself becomes a tactical decision."
+}

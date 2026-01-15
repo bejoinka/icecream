@@ -1,0 +1,76 @@
+{
+  "id": "los-angeles-ca",
+  "name": "Los Angeles",
+  "state": "CA",
+  "overview": "Los Angeles is the largest sanctuary city in the United States, with immigrant protections dating back to 1979 when LAPD instituted Special Order 40 prohibiting officers from inquiring about immigration status. In December 2024, Mayor Karen Bass signed a comprehensive Sanctuary City Ordinance permanently enshrining these policies into municipal law, prohibiting city resources from being used for federal immigration enforcement. The city is home to approximately 1 million undocumented residents and hosts the nation's densest network of immigrant rights organizations, including CHIRLA (Coalition for Humane Immigrant Rights), which received $34 million in 2023 alone.\n\nSince June 2025, Los Angeles has become the epicenter of federal immigration enforcement conflict. ICE raids in the Fashion District and throughout Latino neighborhoods sparked massive protests, leading to President Trump federalizing the California National Guard and deploying Marines to the city. The Trump administration has sued Mayor Bass directly, attempting to overturn sanctuary policies. Despite intense federal pressure, city leadership has doubled down on protections, with Bass issuing Executive Directive No. 12 in July 2025 requiring all city departments to support immigrants and establishing cash assistance programs for affected families. The city now operates under a county-declared state of emergency over immigration raids.",
+  "pulse": {
+    "federalCooperation": 12,
+    "dataDensity": 72,
+    "politicalCover": 78,
+    "civilSocietyCapacity": 85,
+    "bureaucraticInertia": 55
+  },
+  "neighborhoods": [
+    {
+      "id": "los-angeles-ca-boyle-heights",
+      "name": "Boyle Heights",
+      "description": "Historic working-class Mexican-American neighborhood east of downtown, epicenter of 2025 protests and community resistance, with businesses reporting 50% revenue losses due to immigration enforcement climate.",
+      "pulse": {
+        "trust": 75,
+        "suspicion": 35,
+        "enforcementVisibility": 70,
+        "communityDensity": 90,
+        "economicPrecarity": 75
+      }
+    },
+    {
+      "id": "los-angeles-ca-koreatown",
+      "name": "Koreatown",
+      "description": "LA's most densely populated district where two-thirds of residents are foreign-born, a multiethnic enclave split between Korean and Latino immigrants with 30% non-citizen population.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 50,
+        "enforcementVisibility": 45,
+        "communityDensity": 95,
+        "economicPrecarity": 60
+      }
+    },
+    {
+      "id": "los-angeles-ca-pacoima",
+      "name": "Pacoima",
+      "description": "Working-class San Fernando Valley neighborhood that experienced high-profile ICE raids at Home Depot, Lowes, and Costco in June 2025, now a hub of teen-led resistance organizing.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 55,
+        "enforcementVisibility": 85,
+        "communityDensity": 70,
+        "economicPrecarity": 70
+      }
+    },
+    {
+      "id": "los-angeles-ca-south-la",
+      "name": "South LA",
+      "description": "Historically Black neighborhood that transformed to two-thirds Latino through 1980s-90s Central American and Mexican immigration, now a complex multiethnic community with 24% non-citizen residents.",
+      "pulse": {
+        "trust": 45,
+        "suspicion": 60,
+        "enforcementVisibility": 55,
+        "communityDensity": 65,
+        "economicPrecarity": 80
+      }
+    },
+    {
+      "id": "los-angeles-ca-fashion-district",
+      "name": "Fashion District",
+      "description": "Downtown manufacturing and wholesale hub where June 6, 2025 workplace raids sparked citywide protests and subsequent National Guard deployment, workforce heavily dependent on immigrant labor.",
+      "pulse": {
+        "trust": 40,
+        "suspicion": 75,
+        "enforcementVisibility": 90,
+        "communityDensity": 50,
+        "economicPrecarity": 85
+      }
+    }
+  ],
+  "playabilityRationale": "Los Angeles offers the highest-stakes sanctuary city gameplay in America. The direct confrontation between the nation's largest city government and federal enforcement creates unique narrative tensions: Mayor Bass is personally named in federal lawsuits while distributing cash aid to affected families. Players experience the contrast between strong formal protections and aggressive enforcement reality. The city's massive immigrant rights infrastructure (CHIRLA alone has 160+ staff) provides extensive support networks, but the June 2025 raids demonstrated that sanctuary policies cannot prevent federal operations. Neighborhood diversity creates varied gameplay environments: Boyle Heights offers tight community solidarity, Koreatown presents multiethnic complexity, Pacoima shows suburban vulnerability, and the Fashion District represents workplace exposure. The ongoing legal battles, National Guard presence, and county state of emergency create a dynamic environment where the rules are actively being contested."
+}

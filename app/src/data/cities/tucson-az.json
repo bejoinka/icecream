@@ -1,0 +1,76 @@
+{
+  "id": "tucson-az",
+  "name": "Tucson",
+  "state": "AZ",
+  "overview": "Tucson represents a progressive blue island in Arizona's hostile red sea. Unlike Phoenix to the north, this border city has consistently resisted formal cooperation with federal immigration enforcement. The Tucson Police Department maintains a longstanding policy against detaining people solely for suspected immigration violations, and Pima County Sheriff Chris Nanos has declared that deputies will not participate in immigration enforcement or provide ICE with detention space. When voters rejected the 2019 Proposition 205 sanctuary city measure 70-30, it was largely because city leaders argued Tucson already operates as a de facto sanctuary—the proposition's legal risks outweighed its symbolic value. Mayor Regina Romero has pledged to protect families from separation and refuses to use city funds for federal enforcement operations.\n\nYet Tucson's position 60 miles from the border puts it at the center of humanitarian crisis and political crossfire. The Tucson Sector recorded over 250,000 migrant encounters in the first four months of fiscal 2024—the highest of any border sector. Arizona's Proposition 314, passed in November 2024, creates new state immigration crimes that threaten to override local resistance. What truly distinguishes Tucson is its extraordinary civil society infrastructure: No More Deaths operates desert aid camps and faced its first Border Patrol raid since 2020 in November 2025; the Tucson Samaritans run 14 weekly desert patrol missions; Coalicion de Derechos Humanos has organized Defense and Resistance Committees with 15 allied organizations. With 4,384 migrant remains recovered in surrounding deserts since 2000, the humanitarian stakes here are life and death. Families in Tucson live between a city that protects them, a state that criminalizes them, and a desert that can kill them.",
+  "pulse": {
+    "federalCooperation": 38,
+    "dataDensity": 62,
+    "politicalCover": 65,
+    "civilSocietyCapacity": 82,
+    "bureaucraticInertia": 48
+  },
+  "neighborhoods": [
+    {
+      "id": "tucson-az-south-tucson",
+      "name": "South Tucson",
+      "description": "Independent enclave city (pop. 5,600) within Tucson, predominantly Latino working-class community with its own police force and a reputation as a refuge from county and state enforcement.",
+      "pulse": {
+        "trust": 58,
+        "suspicion": 45,
+        "enforcementVisibility": 35,
+        "communityDensity": 88,
+        "economicPrecarity": 78
+      }
+    },
+    {
+      "id": "tucson-az-barrio-historico",
+      "name": "Barrio Historico",
+      "description": "Historic neighborhood south of downtown with deep Mexican and Chinese immigrant roots dating to the 1800s, where adobe homes and multi-generational families maintain cultural continuity despite gentrification pressure.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 42,
+        "enforcementVisibility": 38,
+        "communityDensity": 75,
+        "economicPrecarity": 58
+      }
+    },
+    {
+      "id": "tucson-az-flowing-wells",
+      "name": "Flowing Wells",
+      "description": "Unincorporated working-class area northwest of downtown with affordable housing attracting immigrant families, but lacking the incorporated city protections of central Tucson neighborhoods.",
+      "pulse": {
+        "trust": 42,
+        "suspicion": 55,
+        "enforcementVisibility": 52,
+        "communityDensity": 68,
+        "economicPrecarity": 72
+      }
+    },
+    {
+      "id": "tucson-az-midtown",
+      "name": "Midtown",
+      "description": "Central commercial corridor along Broadway and Campbell where immigrant-owned businesses, day labor sites, and social service agencies cluster in view of both supporters and ICE surveillance.",
+      "pulse": {
+        "trust": 45,
+        "suspicion": 52,
+        "enforcementVisibility": 48,
+        "communityDensity": 62,
+        "economicPrecarity": 55
+      }
+    },
+    {
+      "id": "tucson-az-tanque-verde",
+      "name": "Tanque Verde",
+      "description": "Affluent eastern foothills community where immigrant families work as landscapers, housekeepers, and construction workers but cannot afford to live, representing the invisible labor that sustains Tucson's wealth.",
+      "pulse": {
+        "trust": 32,
+        "suspicion": 38,
+        "enforcementVisibility": 25,
+        "communityDensity": 22,
+        "economicPrecarity": 85
+      }
+    }
+  ],
+  "playabilityRationale": "Tucson offers the essential 'contested sanctuary' gameplay experience—a city that actively protects immigrant families set within a state determined to criminalize them. The city-county-state jurisdictional patchwork creates genuine strategic complexity: TPD and the Pima County Sheriff resist enforcement, but Prop 314 empowers state troopers to make immigration arrests, and unincorporated areas like Flowing Wells lack city protections entirely. The extraordinary civil society network—No More Deaths, Tucson Samaritans, Coalicion de Derechos Humanos—provides gameplay resources unavailable anywhere else: desert survival knowledge, rapid response networks, know-your-rights training, and 30 years of organizing experience. The November 2025 Border Patrol raid on No More Deaths' camp signals escalating federal pressure on humanitarian infrastructure. Players must navigate a landscape where protection depends on precise geography, where the desert itself is a character that kills 159 people annually, and where the choice between surrendering to Border Patrol or trusting humanitarian networks carries life-or-death consequences. Tucson tests whether community solidarity can survive state-level assault."
+}

@@ -1,0 +1,88 @@
+{
+  "id": "boston-ma",
+  "name": "Boston",
+  "state": "MA",
+  "overview": "Boston operates under Massachusetts's comprehensive Trust Act (2017), which prohibits state and local law enforcement from detaining individuals solely based on ICE civil immigration detainers, inquiring about immigration status, or participating in federal immigration enforcement absent a judicial warrant. The city has reinforced these protections through local policy, and Mayor Michelle Wu has consistently defended immigrant communities against federal pressure while leveraging the city's institutional weight in higher education and healthcare. Boston's political identity as a progressive stronghold provides substantial cover for resistance, though the city's deep bureaucratic complexity and fragmented municipal systems can both shield and ensnare immigrant residents.\n\nBoston is home to significant Brazilian, Haitian, Central American, and Caribbean immigrant communities concentrated in neighborhoods like East Boston, Dorchester, Jamaica Plain, and Chelsea (an adjacent municipality with deep Boston ties). The city's robust network of legal aid organizations, including the Political Asylum/Immigration Representation Project, Massachusetts Immigrant and Refugee Advocacy Coalition, and numerous university-affiliated clinics, provides substantial civil society capacity. However, Boston's extreme cost of living creates intense economic precarity, forcing immigrant families into difficult tradeoffs between visibility in the formal economy and survival in informal networks. The healthcare and university sectors employ large numbers of immigrants across the documentation spectrum, from H-1B visa holders to undocumented essential workers.",
+  "pulse": {
+    "federalCooperation": 15,
+    "dataDensity": 55,
+    "politicalCover": 78,
+    "civilSocietyCapacity": 82,
+    "bureaucraticInertia": 70
+  },
+  "neighborhoods": [
+    {
+      "id": "boston-ma-east-boston",
+      "name": "East Boston",
+      "description": "Densely populated neighborhood across the harbor from downtown, historically Italian but now majority Latino with large Central American and Colombian populations, where Maverick Square businesses operate in Spanish and community organizations like La Colaborativa provide direct support.",
+      "pulse": {
+        "trust": 75,
+        "suspicion": 60,
+        "enforcementVisibility": 65,
+        "communityDensity": 90,
+        "economicPrecarity": 72
+      }
+    },
+    {
+      "id": "boston-ma-dorchester",
+      "name": "Dorchester (Fields Corner/Uphams Corner)",
+      "description": "Boston's largest and most diverse neighborhood, with Fields Corner serving as the heart of the Vietnamese community and Uphams Corner anchoring Cape Verdean and Haitian populations, creating a patchwork of immigrant enclaves with distinct mutual aid networks that rarely overlap.",
+      "pulse": {
+        "trust": 65,
+        "suspicion": 50,
+        "enforcementVisibility": 55,
+        "communityDensity": 75,
+        "economicPrecarity": 68
+      }
+    },
+    {
+      "id": "boston-ma-jamaica-plain",
+      "name": "Jamaica Plain",
+      "description": "Historically working-class neighborhood that gentrified significantly but retains Latino presence along Centre Street and Hyde Square, where Dominican businesses coexist with progressive activist infrastructure and strong sanctuary city advocacy.",
+      "pulse": {
+        "trust": 70,
+        "suspicion": 35,
+        "enforcementVisibility": 40,
+        "communityDensity": 70,
+        "economicPrecarity": 55
+      }
+    },
+    {
+      "id": "boston-ma-allston-brighton",
+      "name": "Allston-Brighton",
+      "description": "Student-heavy neighborhoods near Boston University and Boston College with significant Brazilian and international student populations, where immigration status intersects with academic standing and visa compliance in complex ways.",
+      "pulse": {
+        "trust": 50,
+        "suspicion": 40,
+        "enforcementVisibility": 35,
+        "communityDensity": 55,
+        "economicPrecarity": 60
+      }
+    },
+    {
+      "id": "boston-ma-chelsea",
+      "name": "Chelsea (Greater Boston)",
+      "description": "Independent city just north of Boston that is majority-Latino with the highest percentage of foreign-born residents in Massachusetts, functioning as an affordable alternative to Boston proper where Central American families concentrate but face aggressive rent increases and limited municipal resources.",
+      "pulse": {
+        "trust": 80,
+        "suspicion": 70,
+        "enforcementVisibility": 75,
+        "communityDensity": 92,
+        "economicPrecarity": 85
+      }
+    },
+    {
+      "id": "boston-ma-mattapan",
+      "name": "Mattapan",
+      "description": "Predominantly Black neighborhood with deep Haitian roots, where Creole is spoken in churches, barbershops, and the sprawling Haitian Multi-Service Center, creating a community that has navigated TPS uncertainty for decades.",
+      "pulse": {
+        "trust": 72,
+        "suspicion": 55,
+        "enforcementVisibility": 50,
+        "communityDensity": 85,
+        "economicPrecarity": 70
+      }
+    }
+  ],
+  "playabilityRationale": "Boston offers distinctive gameplay through its layered institutional complexity: the Massachusetts Trust Act provides strong statewide protection, but navigating Boston's fragmented bureaucracy across housing, healthcare, and employment requires understanding systems that operate at city, county, and state levels simultaneously. The city's exceptional density of legal aid organizations and university clinics creates robust civil society capacity, but these resources are overwhelmed by demand and require documentation or appointments that exclude the most vulnerable. Players experience the tension between East Boston's tight-knit Latino networks where Spanish-language communication flows freely and Mattapan's Haitian community operating through different channels with distinct TPS-related anxieties. Chelsea provides a suburban-adjacent setting where even more precarious conditions prevail despite sanctuary policies. The Brazilian community's unique position spanning student visas to undocumented workers creates cross-class solidarity challenges. Boston's extreme cost of living forces families into impossible calculations: formal employment offers stability but visibility, while informal work provides anonymity at the cost of labor protections. The healthcare and university sectors offer potential sanctuary spaces but also compliance requirements that can expose workers. The city's political cover is substantial but untested against serious federal escalation."
+}

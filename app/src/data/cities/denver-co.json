@@ -1,0 +1,88 @@
+{
+  "id": "denver-co",
+  "name": "Denver",
+  "state": "CO",
+  "overview": "Denver occupies a unique position as a progressive blue city in a state that has enacted some of the strongest immigrant protections in the country, yet shares borders with Wyoming, Nebraska, Kansas, Oklahoma, and New Mexico where enforcement dynamics differ dramatically. Colorado's 2019 law prohibits state and local law enforcement from honoring ICE detainers without judicial warrants, and the state expanded access to driver's licenses for undocumented residents in 2013. Governor Jared Polis has positioned Colorado as a refuge state, though his administration has had to navigate tensions with the federal government over funding threats. Denver's Mayor Mike Johnston initially declared the city would 'resist any attempts' at mass deportation before moderating language amid political pressure, reflecting the gap between sanctuary symbolism and operational reality.\n\nDenver's immigrant population is concentrated in historically Latino neighborhoods on the west and north sides, including Westwood, Sun Valley, and Globeville-Elyria-Swansea, which have experienced rapid gentrification over the past decade as housing costs more than doubled. The city received approximately 40,000 migrants between 2023-2024, primarily from Venezuela, straining shelter capacity and drawing national attention. Aurora, Denver's neighboring suburb to the east, has become a flashpoint for anti-immigrant rhetoric following sensationalized media coverage of Venezuelan gangs, despite data showing crime rates remain stable. The metro area hosts significant refugee resettlement programs, particularly for Afghan and Ukrainian arrivals, creating a patchwork of legal statuses and community resources across the region. Civil society organizations like the Colorado Immigrant Rights Coalition, Together Colorado, and the Meyer Law Office provide legal aid and rapid response networks, though capacity is stretched thin across the sprawling metro area.",
+  "pulse": {
+    "federalCooperation": 28,
+    "dataDensity": 55,
+    "politicalCover": 62,
+    "civilSocietyCapacity": 65,
+    "bureaucraticInertia": 52
+  },
+  "neighborhoods": [
+    {
+      "id": "denver-co-westwood",
+      "name": "Westwood",
+      "description": "Denver's most Latino neighborhood at over 80% Hispanic, a working-class community of single-family homes and small businesses along Morrison Road facing intense gentrification pressure as the light rail expansion brings development interest.",
+      "pulse": {
+        "trust": 75,
+        "suspicion": 55,
+        "enforcementVisibility": 45,
+        "communityDensity": 88,
+        "economicPrecarity": 72
+      }
+    },
+    {
+      "id": "denver-co-sun-valley",
+      "name": "Sun Valley",
+      "description": "Denver's poorest neighborhood, home to the Sun Valley Homes public housing complex and the Decatur-Federal light rail station, where longtime Latino and Vietnamese families navigate massive redevelopment plans that promise investment but threaten displacement.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 50,
+        "enforcementVisibility": 55,
+        "communityDensity": 70,
+        "economicPrecarity": 85
+      }
+    },
+    {
+      "id": "denver-co-globeville-elyria-swansea",
+      "name": "Globeville-Elyria-Swansea",
+      "description": "Historic industrial neighborhoods north of downtown, bisected by I-70 and plagued by environmental contamination, where multigenerational Latino families live alongside recent arrivals and face both displacement pressure and health hazards from the Suncor refinery.",
+      "pulse": {
+        "trust": 65,
+        "suspicion": 60,
+        "enforcementVisibility": 50,
+        "communityDensity": 75,
+        "economicPrecarity": 78
+      }
+    },
+    {
+      "id": "denver-co-federal-boulevard-corridor",
+      "name": "Federal Boulevard Corridor",
+      "description": "The spine of Denver's immigrant commercial life stretching from Barnum to Westminster, lined with taquerias, Vietnamese pho shops, African markets, and money transfer services that serve as informal community hubs and information networks.",
+      "pulse": {
+        "trust": 70,
+        "suspicion": 45,
+        "enforcementVisibility": 50,
+        "communityDensity": 80,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "denver-co-aurora-east",
+      "name": "Aurora (East Colfax/Havana)",
+      "description": "Denver's eastern neighbor and Colorado's third-largest city, where a diverse mix of Ethiopian, Eritrean, Korean, and Latino communities cluster around Colfax Avenue and Havana Street in aging apartment complexes that became the center of sensationalized national media coverage about Venezuelan gangs in 2024.",
+      "pulse": {
+        "trust": 45,
+        "suspicion": 70,
+        "enforcementVisibility": 65,
+        "communityDensity": 60,
+        "economicPrecarity": 75
+      }
+    },
+    {
+      "id": "denver-co-montbello",
+      "name": "Montbello",
+      "description": "Far northeast Denver neighborhood originally built for airport workers, now home to growing Latino and African immigrant populations, geographically isolated from downtown services but with strong church networks and community organizing through groups like the Montbello Organizing Committee.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 40,
+        "enforcementVisibility": 35,
+        "communityDensity": 65,
+        "economicPrecarity": 68
+      }
+    }
+  ],
+  "playabilityRationale": "Denver offers compelling gameplay as a progressive sanctuary city whose protections are constantly tested by geographic and political realities. The state's strong legal framework contrasts with the practical vulnerabilities of immigrant communities in a sprawling, car-dependent metro area where public transit expansion brings both opportunity and displacement risk. Players navigate the tension between Denver's sanctuary symbolism and Aurora's hostile political environment just miles away, where the same family might experience dramatically different enforcement dynamics depending on which side of the city line they live. The gentrification storyline is central: longtime residents of Westwood and Sun Valley face the cruel irony of neighborhoods becoming too expensive precisely as they become safer and better connected. The Venezuelan migrant crisis adds temporal urgency, with recently arrived families navigating systems designed for different populations while facing national media spotlight and political scapegoating. The refugee resettlement infrastructure provides potential allies and resources, but also reveals hierarchies of 'deserving' versus 'undeserving' immigrants. Denver's civil society is organized but stretched across vast distances, creating gameplay opportunities around resource allocation and community building across isolated neighborhoods. The environmental justice dimension in Globeville-Elyria-Swansea adds another layer where families must weigh health risks against the stability of established community networks."
+}

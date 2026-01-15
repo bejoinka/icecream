@@ -1,0 +1,76 @@
+{
+  "id": "newark-nj",
+  "name": "Newark",
+  "state": "NJ",
+  "overview": "Newark is New Jersey's largest city and a majority-minority municipality where roughly 30% of residents are foreign-born, with significant Brazilian, Portuguese, Ecuadorian, Mexican, Haitian, and West African communities concentrated in distinct neighborhoods. Under Mayor Ras Baraka's progressive administration, Newark has positioned itself as one of the region's most defiant sanctuary cities, passing a 2017 ordinance prohibiting city employees from inquiring about immigration status and refusing to honor ICE detainers without judicial warrants. The city joined legal challenges against federal threats to withhold funding from sanctuary jurisdictions and has publicly denounced federal enforcement operations. Newark's proximity to New York City creates significant spillover dynamics, with enforcement pressure in the five boroughs pushing both undocumented residents and ICE activity across the Hudson River.\n\nThe city's industrial decline since the 1960s has left deep economic precarity despite recent revitalization efforts around the Prudential Center and Newark Penn Station. Decades of disinvestment created a fragmented municipal bureaucracy and aging infrastructure that paradoxically provides some protection through inefficiency. Newark's civil society capacity is growing but remains stretched thin compared to larger sanctuary cities, with organizations like American Friends Service Committee, Make the Road New Jersey, and La Casa de Don Pedro providing legal aid, know-your-rights training, and rapid response networks. The Ironbound district's tight-knit Portuguese and Brazilian community operates sophisticated informal warning systems developed over decades, while newer immigrant populations in the Central and South Wards face greater isolation and vulnerability. The 2025 federal enforcement surge has intensified fear across all communities, with businesses reporting dramatic revenue drops and schools seeing attendance decline as families weigh the risks of daily routines.",
+  "pulse": {
+    "federalCooperation": 22,
+    "dataDensity": 42,
+    "politicalCover": 70,
+    "civilSocietyCapacity": 48,
+    "bureaucraticInertia": 68
+  },
+  "neighborhoods": [
+    {
+      "id": "newark-nj-ironbound",
+      "name": "Ironbound / East Ward",
+      "description": "Newark's most vibrant immigrant neighborhood bounded by railroad tracks, home to the largest Portuguese and Brazilian populations in the Northeast with Ferry Street serving as the commercial and cultural heart. Decades of community organizing have created sophisticated mutual aid networks and informal warning systems that activate when ICE vehicles are spotted.",
+      "pulse": {
+        "trust": 80,
+        "suspicion": 45,
+        "enforcementVisibility": 50,
+        "communityDensity": 92,
+        "economicPrecarity": 55
+      }
+    },
+    {
+      "id": "newark-nj-north-ward",
+      "name": "North Ward / Broadway",
+      "description": "Historically Italian neighborhood that has transformed into a diverse Latino and African immigrant hub along Broadway corridor, with Ecuadorian, Mexican, and West African families operating small businesses alongside Portuguese and Puerto Rican residents from earlier waves. The area's political transition creates tensions between old-guard Italian-American institutions and newer immigrant advocacy.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 50,
+        "enforcementVisibility": 55,
+        "communityDensity": 70,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "newark-nj-south-ward",
+      "name": "South Ward",
+      "description": "Newark's largest and most economically challenged ward, predominantly African American but with growing West African (especially Nigerian and Ghanaian) and Caribbean immigrant populations. Limited organizational infrastructure and higher crime rates create isolation from citywide immigrant rights networks, leaving families more vulnerable to enforcement encounters.",
+      "pulse": {
+        "trust": 45,
+        "suspicion": 55,
+        "enforcementVisibility": 60,
+        "communityDensity": 55,
+        "economicPrecarity": 80
+      }
+    },
+    {
+      "id": "newark-nj-downtown-newark",
+      "name": "Downtown Newark",
+      "description": "The city's commercial core around Military Park, Newark Penn Station, and the Prudential Center, experiencing revitalization investment while remaining a transit hub where enforcement encounters at transportation checkpoints pose daily risks for commuters traveling to work throughout the region.",
+      "pulse": {
+        "trust": 40,
+        "suspicion": 60,
+        "enforcementVisibility": 70,
+        "communityDensity": 35,
+        "economicPrecarity": 50
+      }
+    },
+    {
+      "id": "newark-nj-central-ward",
+      "name": "Central Ward",
+      "description": "The historic heart of Newark's African American community, site of the 1967 rebellion, now home to growing Haitian and Central American immigrant populations living alongside long-term Black residents. Shared experiences of institutional neglect and police encounters create potential for solidarity, though language barriers and different legal vulnerabilities complicate organizing.",
+      "pulse": {
+        "trust": 50,
+        "suspicion": 60,
+        "enforcementVisibility": 55,
+        "communityDensity": 60,
+        "economicPrecarity": 75
+      }
+    }
+  ],
+  "playabilityRationale": "Newark offers a distinctive gameplay environment as a mid-sized sanctuary city operating in the shadow of New York, where strong mayoral leadership and explicit non-cooperation policies provide formal protection but limited civil society capacity creates real vulnerability. The contrast between the Ironbound's exceptional community density and mutual aid infrastructure versus the South and Central Wards' relative isolation creates meaningful strategic choices about where to live and work. Players navigate the complexity of NYC spillover effects, where enforcement pressure across the Hudson pushes both immigrants seeking refuge and ICE activity seeking easier targets into Newark's neighborhoods. The city's deep economic precarity from decades of industrial decline shapes every decision, while its bureaucratic inefficiency provides unexpected cover through slow-moving systems. Newark enables stories about Portuguese and Brazilian families with deep roots alongside newer arrivals from Latin America and Africa, cross-cultural solidarity between Black American and immigrant communities, and the particular vulnerabilities of transit corridors connecting immigrant workers to regional employment."
+}

@@ -1,0 +1,76 @@
+{
+  "id": "san-antonio-tx",
+  "name": "San Antonio",
+  "state": "TX",
+  "overview": "San Antonio is the largest majority-Hispanic city in the United States, with 64% of its 1.5 million residents identifying as Hispanic or Latino, predominantly of Mexican descent. The city's West Side neighborhoods were built by Mexican immigrants fleeing revolution in the early 20th century, and generations of families remain rooted in these communities despite decades of segregation, redlining, and ongoing gentrification pressure. Unlike El Paso's overt border enforcement presence, San Antonio operates in a more ambiguous space: not officially a sanctuary city, yet historically resistant to aggressive federal cooperation until forced into compliance. In 2017, the city sued Texas over SB4, calling it discriminatory, but ultimately paid $300,000 to settle Attorney General Ken Paxton's lawsuit over alleged non-cooperation, agreeing to modify police practices and submit to ongoing compliance monitoring.\n\nUnder the second Trump administration, San Antonio has become a key target for intensified ICE operations. In January 2025, multi-agency raids involving ICE, FBI, DEA, and ATF swept through the city. A chaotic November 2025 raid near Basse Road and San Pedro Avenue detained over 140 people in a single morning, with Congressmen Castro and Casar demanding answers about 138 individuals whose whereabouts remained unknown. ICE Field Office Director Miguel Vergara has declared SAPD and ICE are 'in complete agreement' on enforcement priorities. The city's police chief has interpreted Texas law to require assisting federal enforcement on request, including transporting detainees to federal facilities. Yet civil society remains active: RAICES, the largest immigration legal services agency in Texas, is headquartered here, and the city funds three legal service providers for immigrant communities. Gentrification campaigns like 'Mi Barrio No Se Vende' organized by Esperanza Peace and Justice Center reveal how displacement and immigration enforcement compound pressures on working-class Latino families.",
+  "pulse": {
+    "federalCooperation": 62,
+    "dataDensity": 68,
+    "politicalCover": 42,
+    "civilSocietyCapacity": 58,
+    "bureaucraticInertia": 48
+  },
+  "neighborhoods": [
+    {
+      "id": "san-antonio-tx-west-side",
+      "name": "West Side",
+      "description": "The historic heart of Mexican-American San Antonio, built by immigrants fleeing revolution in the early 1900s, home to the Guadalupe Cultural Arts Center, Our Lady of the Lake University, and multi-generational families fighting displacement through 'Mi Barrio No Se Vende' campaigns.",
+      "pulse": {
+        "trust": 75,
+        "suspicion": 35,
+        "enforcementVisibility": 45,
+        "communityDensity": 90,
+        "economicPrecarity": 80
+      }
+    },
+    {
+      "id": "san-antonio-tx-south-side",
+      "name": "South Side",
+      "description": "A predominantly Hispanic area (81%) anchored by the UNESCO World Heritage San Antonio Missions, including Mission San Jose, where working-class families live alongside historic sites but have experienced displacement from developments like the Mission Trails luxury apartments.",
+      "pulse": {
+        "trust": 65,
+        "suspicion": 40,
+        "enforcementVisibility": 50,
+        "communityDensity": 75,
+        "economicPrecarity": 70
+      }
+    },
+    {
+      "id": "san-antonio-tx-eastside",
+      "name": "Eastside",
+      "description": "A culturally diverse neighborhood designated a National Promise Zone under Obama, with workforce development programs and the Eastside Education and Training Center, where community organizing has reduced unemployment but gentrification pressures are mounting.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 45,
+        "enforcementVisibility": 55,
+        "communityDensity": 70,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "san-antonio-tx-downtown-near-north",
+      "name": "Downtown/Near North",
+      "description": "The site of the November 2025 mass ICE raid that detained 140+ people near Basse and San Pedro, where immigrant workers in the service economy navigate proximity to tourist areas, tech development, and heightened enforcement visibility.",
+      "pulse": {
+        "trust": 40,
+        "suspicion": 70,
+        "enforcementVisibility": 80,
+        "communityDensity": 50,
+        "economicPrecarity": 60
+      }
+    },
+    {
+      "id": "san-antonio-tx-leon-valley",
+      "name": "Leon Valley",
+      "description": "An independent enclave city surrounded entirely by San Antonio, with 56% Hispanic population and its own police department, creating jurisdictional complexity where residents may encounter different enforcement practices within minutes of home.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 50,
+        "enforcementVisibility": 45,
+        "communityDensity": 55,
+        "economicPrecarity": 50
+      }
+    }
+  ],
+  "playabilityRationale": "San Antonio presents a distinctive gameplay scenario: a majority-Latino city where being Hispanic is the demographic norm, yet state-level politics have systematically dismantled local protections. Unlike sanctuary cities where political cover is explicit, or border cities where federal presence is overwhelming, San Antonio occupies an uncomfortable middle ground of quiet compliance under pressure. The $300,000 settlement with AG Paxton and ongoing compliance monitoring creates a dynamic where local authorities cannot openly resist even when community sentiment opposes enforcement. Players experience the dissonance of navigating a culturally familiar environment where Spanish is everywhere and Latino identity is mainstream, while knowing that police have agreed to assist ICE operations on request. The West Side's century-old immigrant community traditions provide deep roots and solidarity networks, but gentrification threatens to displace the same families that enforcement targets. The November 2025 mass raid near downtown demonstrates that even areas away from the border face sudden, large-scale operations. RAICES and legal aid organizations offer resources, but the state's anti-sanctuary framework limits what even sympathetic officials can do. San Antonio forces players to reckon with what protection means when the community is yours but the political structure is not."
+}

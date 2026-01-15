@@ -1,0 +1,76 @@
+{
+  "id": "san-francisco-ca",
+  "name": "San Francisco",
+  "state": "CA",
+  "overview": "San Francisco declared itself a sanctuary city in 1989 and strengthened protections with the 2013 'Due Process for All' ordinance. The city prohibits municipal workers from cooperating with federal immigration enforcement unless legally required, and local police cannot use city resources to assist ICE or inquire about immigration status. Under Mayor Daniel Lurie, who took office in January 2025, the city has reaffirmed its sanctuary commitment even as the Trump administration intensified enforcement pressure, deployed federal agents to the Bay Area, and threatened to withhold funding. Northern California maintains the nation's lowest ICE arrest rate despite national surges, a testament to California's SB 54 restrictions on local-federal cooperation.\n\nHowever, San Francisco presents a unique paradox for immigrant families: one of America's strongest sanctuary jurisdictions sits at the heart of the global technology industry. Despite robust legal protections, the city's tech infrastructure creates pervasive surveillance exposure. Revelations in 2025 showed SFPD shared over 1.6 million license plate reader searches with out-of-state agencies, including at least 19 marked as ICE-related. ICE has expanded contracts with companies like Cellebrite for phone data extraction and Paragon for spyware. The 2024 passage of Proposition E gutted the city's Surveillance Technology Ordinance, allowing police to deploy new surveillance tools without oversight. For immigrants, this means strong institutional protection but constant digital vulnerability in a city where the data infrastructure could be weaponized against them at any moment.",
+  "pulse": {
+    "federalCooperation": 15,
+    "dataDensity": 92,
+    "politicalCover": 62,
+    "civilSocietyCapacity": 85,
+    "bureaucraticInertia": 45
+  },
+  "neighborhoods": [
+    {
+      "id": "san-francisco-ca-mission",
+      "name": "Mission District",
+      "description": "Historic heart of San Francisco's Latino community, facing intense gentrification pressure from tech industry expansion while maintaining dense networks of immigrant advocacy organizations, legal aid clinics, and cultural institutions.",
+      "pulse": {
+        "trust": 75,
+        "suspicion": 40,
+        "enforcementVisibility": 35,
+        "communityDensity": 90,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "san-francisco-ca-chinatown",
+      "name": "Chinatown",
+      "description": "One of America's oldest and most densely populated Chinatowns, serving as an irreplaceable hub for new Chinese immigrants with deep community institutions but significant language barriers to accessing legal resources.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 55,
+        "enforcementVisibility": 25,
+        "communityDensity": 95,
+        "economicPrecarity": 70
+      }
+    },
+    {
+      "id": "san-francisco-ca-tenderloin",
+      "name": "Tenderloin",
+      "description": "The neighborhood with San Francisco's highest concentration of children, predominantly from immigrant families from Latin America and Southeast Asia, navigating severe poverty, housing instability, and street-level dangers alongside robust nonprofit services.",
+      "pulse": {
+        "trust": 45,
+        "suspicion": 70,
+        "enforcementVisibility": 55,
+        "communityDensity": 80,
+        "economicPrecarity": 95
+      }
+    },
+    {
+      "id": "san-francisco-ca-sunset",
+      "name": "Sunset District",
+      "description": "San Francisco's most populous neighborhood with significant Chinese and Vietnamese immigrant populations living in relative suburban anonymity on the city's foggy western edge.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 35,
+        "enforcementVisibility": 15,
+        "communityDensity": 50,
+        "economicPrecarity": 45
+      }
+    },
+    {
+      "id": "san-francisco-ca-excelsior",
+      "name": "Excelsior",
+      "description": "Working-class neighborhood in the southern part of the city with a diverse immigrant population including significant Latino, Filipino, and Chinese communities, lower education levels, and more affordable housing than central districts.",
+      "pulse": {
+        "trust": 65,
+        "suspicion": 45,
+        "enforcementVisibility": 20,
+        "communityDensity": 70,
+        "economicPrecarity": 60
+      }
+    }
+  ],
+  "playabilityRationale": "San Francisco offers a compelling paradox: one of America's strongest sanctuary jurisdictions embedded in the global capital of surveillance technology. Players must navigate a city where political protection is robust but digital exposure is extreme. The contrast between neighborhoods creates diverse gameplay: the Mission's activist networks versus Chinatown's insular community structures, the Tenderloin's visible precarity versus the Sunset's suburban invisibility. The ongoing tension between Mayor Lurie's sanctuary commitments and federal pressure, combined with revelations about SFPD data sharing with ICE, creates a dynamic environment where institutional protection can never be fully trusted. The tech industry's dual role as both economic opportunity and surveillance threat adds moral complexity to every decision about work, housing, and community engagement."
+}

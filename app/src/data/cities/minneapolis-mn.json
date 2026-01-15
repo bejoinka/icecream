@@ -1,0 +1,76 @@
+{
+  "id": "minneapolis-mn",
+  "name": "Minneapolis",
+  "state": "MN",
+  "overview": "Minneapolis is home to the largest Somali diaspora in the United States, with approximately 84,000 people of Somali descent in the Twin Cities metro area, nearly 58% of whom were born in the U.S. and 87% of foreign-born Somalis holding naturalized citizenship. The city's separation ordinance, originally enacted over 22 years ago, prohibits police from questioning residents' immigration status or enforcing federal immigration law. In late 2025, Mayor Jacob Frey strengthened these protections by codifying an executive order that bans ICE from staging operations on city-owned lots and ramps, while three progressive city council members work to set a national standard for pushback against federal overreach. The city has joined Minnesota and St. Paul in suing the Department of Homeland Security, ICE, and senior federal officials, with Attorney General Keith Ellison calling the deployment a 'federal invasion of the Twin Cities.'\n\nIn December 2025, the Trump administration launched 'Operation Metro Surge,' deploying roughly 100 ICE officers in strike teams targeting Somali immigrants, with reports of 2,000 additional agents being sent to make Minneapolis the focal point of nationwide deportation efforts. The DOJ has filed lawsuits against Minnesota, Minneapolis, Hennepin County, and Sheriff Dawanna S. Witt over sanctuary policies, specifically targeting the county's 2021 directive refusing to honor ICE detainers. Despite this pressure, only about 5,800 of Minnesota's 83,000+ Somali residents are noncitizens. The immigrant community spans from Cedar-Riverside's 'Little Mogadishu' to Lake Street's Latino corridor, where businesses report empty tables and closed stalls as employees face detention. Faith communities have mobilized with ISAIAH and ICOM organizing congregants to follow ICE agents, blow whistles, and drive immigrants to work to avoid enforcement on public transit.",
+  "pulse": {
+    "federalCooperation": 22,
+    "dataDensity": 62,
+    "politicalCover": 72,
+    "civilSocietyCapacity": 78,
+    "bureaucraticInertia": 65
+  },
+  "neighborhoods": [
+    {
+      "id": "minneapolis-mn-cedar-riverside",
+      "name": "Cedar-Riverside (Little Mogadishu)",
+      "description": "Dense neighborhood home to roughly 8,000 Somali residents, where Somali is spoken by 47% of the population. This hub of mosques, shops, and community life became a flashpoint in December 2025 when activists confronted ICE officers while residents carried passports and immigration documents in their pockets. Support for Democrats dropped from 91% in 2020 to a smaller majority in 2024, reflecting political shifts within the community.",
+      "pulse": {
+        "trust": 80,
+        "suspicion": 65,
+        "enforcementVisibility": 75,
+        "communityDensity": 95,
+        "economicPrecarity": 60
+      }
+    },
+    {
+      "id": "minneapolis-mn-phillips",
+      "name": "Phillips",
+      "description": "One of Minneapolis's most racially diverse areas, subdivided into Ventura Village, Phillips West, East Phillips, and Midtown Phillips. Phillips West is 36% foreign-born with large East African and Latino populations, while East Phillips is 83% BIPOC. The area is home to the Midtown Global Market, American Indian Movement founding site, and faces ongoing environmental justice struggles over industrial contamination.",
+      "pulse": {
+        "trust": 65,
+        "suspicion": 50,
+        "enforcementVisibility": 55,
+        "communityDensity": 80,
+        "economicPrecarity": 72
+      }
+    },
+    {
+      "id": "minneapolis-mn-lake-street",
+      "name": "Lake Street Corridor",
+      "description": "Five-mile stretch from Bde Maka Ska to the Mississippi River transformed from desolation in the 1990s into a vibrant Latino and Somali commercial corridor through immigrant entrepreneurship. Home to Mercado Central (opened 1999), CLUES headquarters, and Plaza Mexico, now experiencing dramatic business decline as employees face ICE detention and customers stay away since the 2024 election. The Lake Street Council has condemned divisive federal rhetoric while the annual Taco Tour promotes resilience.",
+      "pulse": {
+        "trust": 70,
+        "suspicion": 60,
+        "enforcementVisibility": 70,
+        "communityDensity": 85,
+        "economicPrecarity": 68
+      }
+    },
+    {
+      "id": "minneapolis-mn-northeast",
+      "name": "Northeast Minneapolis",
+      "description": "Historically working-class neighborhood with generations of Eastern European immigrants now experiencing demographic shifts. The arts district and brewing scene coexist with older immigrant families and newer arrivals from East Africa and Latin America, creating a transitional zone with less concentrated enforcement attention but growing community organizing networks.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 35,
+        "enforcementVisibility": 40,
+        "communityDensity": 60,
+        "economicPrecarity": 50
+      }
+    },
+    {
+      "id": "minneapolis-mn-brooklyn-park-adjacent",
+      "name": "Brooklyn Park Adjacent (North Metro)",
+      "description": "Northern suburb where 55% of residents are people of color, with a large African immigrant community from Somalia, Ethiopia, Eritrea, and Liberia. Three of four candidates in a recent city council race were immigrants. Reports of ICE activity have spread from Brooklyn Park to St. Cloud, while Somali parents work to preserve heritage language among American-born children who now comprise the majority of the community.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 45,
+        "enforcementVisibility": 50,
+        "communityDensity": 70,
+        "economicPrecarity": 55
+      }
+    }
+  ],
+  "playabilityRationale": "Minneapolis offers unique gameplay as ground zero for the largest Somali diaspora in America facing unprecedented targeted federal enforcement. Operation Metro Surge's explicit focus on Somali immigrants creates high-stakes scenarios where community members with overwhelming citizenship rates (95%+) still face collective anxiety and economic disruption. The layered legal battles between city, county, state, and federal government create constant uncertainty: Minneapolis's separation ordinance, Hennepin County's detainer refusal policy, Minnesota's lawsuit against DHS, and the DOJ's counter-lawsuit all shape an evolving legal landscape. Players experience the contrast between Cedar-Riverside's dense Somali networks with 47% Somali-speaking population and Lake Street's Latino commercial corridor devastated by empty storefronts. The faith-based resistance through ISAIAH and ICOM provides organized civil society capacity, while legal aid from the Immigrant Law Center of Minnesota and Mid-Minnesota Legal Aid offers concrete resources. Post-George Floyd politics have strengthened progressive infrastructure, but shifting Somali voting patterns in 2024 reveal community complexity. The suburban dimension through Brooklyn Park shows how enforcement pressure radiates beyond city limits into immigrant communities across the metro."
+}

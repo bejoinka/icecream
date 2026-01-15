@@ -1,0 +1,76 @@
+{
+  "id": "el-paso-tx",
+  "name": "El Paso",
+  "state": "TX",
+  "overview": "El Paso is America's largest bilingual, binational metropolitan area, sharing a combined population of 2.7 million with Ciudad Juarez across the Rio Grande. Over 80% of El Paso's 680,000 residents are Hispanic or Latino, and the city has served as a gateway for Mexican immigration for over a century. Unlike Texas's hostile state government, El Paso County Commissioners unanimously passed a resolution in November 2024 reaffirming support for immigrants, due process, and human dignity. Commissioner David Stout declared that harsh immigration policies 'go against the values of a community that is binational, bilingual, and pro-immigration.' The city operates extensive migrant services and has defended organizations like Annunciation House against state attacks.\n\nHowever, El Paso's welcoming local politics collide with unprecedented federal and state enforcement infrastructure. The city hosts the El Paso Sector Border Patrol headquarters, multiple international bridges, and since March 2025, a massive ICE detention tent facility at Fort Bliss that has processed over 7,500 people and holds an average of 2,777 detainees daily. Texas National Guard soldiers have been deputized under Title 8 to arrest migrants, and the Pentagon designated a military zone around Fort Bliss in May 2025. ICE conducted 117 deportation flights from El Paso in just the first five months of 2025. Attorney General Ken Paxton has waged legal warfare against Annunciation House's migrant shelters since February 2024, with the Texas Supreme Court ruling in May 2025 that he can pursue records from the organization. Mixed-status families face extraordinary pressure: ICE now arrests people at immigration court hearings, and the District Attorney reports witnesses are too afraid to participate in prosecutions.",
+  "pulse": {
+    "federalCooperation": 58,
+    "dataDensity": 82,
+    "politicalCover": 55,
+    "civilSocietyCapacity": 68,
+    "bureaucraticInertia": 42
+  },
+  "neighborhoods": [
+    {
+      "id": "el-paso-tx-segundo-barrio",
+      "name": "Segundo Barrio",
+      "description": "El Paso's oldest Mexican-American neighborhood, the historic 'Second Ward' has been the starting point for generations of poor Mexican immigrants since the 1890s, home to Sacred Heart Church and deeply rooted community institutions.",
+      "pulse": {
+        "trust": 80,
+        "suspicion": 30,
+        "enforcementVisibility": 55,
+        "communityDensity": 90,
+        "economicPrecarity": 75
+      }
+    },
+    {
+      "id": "el-paso-tx-chamizal",
+      "name": "Barrio Chamizal",
+      "description": "A predominantly immigrant, Spanish-speaking community of 7,000+ residents along the Rio Grande, organized by La Mujer Obrera and Familias Unidas del Chamizal, facing environmental hazards from the Bridge of the Americas truck traffic.",
+      "pulse": {
+        "trust": 75,
+        "suspicion": 40,
+        "enforcementVisibility": 70,
+        "communityDensity": 85,
+        "economicPrecarity": 80
+      }
+    },
+    {
+      "id": "el-paso-tx-northeast",
+      "name": "Northeast El Paso",
+      "description": "Home to the Border Patrol sector headquarters and the Fort Bliss ICE detention tent facility holding 2,700+ detainees, this area has become ground zero for federal enforcement staging operations since 2025.",
+      "pulse": {
+        "trust": 40,
+        "suspicion": 75,
+        "enforcementVisibility": 95,
+        "communityDensity": 45,
+        "economicPrecarity": 50
+      }
+    },
+    {
+      "id": "el-paso-tx-ysleta-mission-valley",
+      "name": "Ysleta-Mission Valley",
+      "description": "Historic neighborhood near Texas's oldest active mission (1680), with 81.5% Hispanic population and 14.6% non-citizen residents, home to the Tigua tribe's Ysleta del Sur Pueblo and working-class families with deep generational roots.",
+      "pulse": {
+        "trust": 65,
+        "suspicion": 45,
+        "enforcementVisibility": 50,
+        "communityDensity": 70,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "el-paso-tx-far-east",
+      "name": "Far East El Paso",
+      "description": "Rapidly growing suburban area near the border that experienced a New Year's Eve 2024 ICE raid, where December enforcement operations revealed patterns of undocumented workers in construction and trades, leaving residents shaken.",
+      "pulse": {
+        "trust": 50,
+        "suspicion": 60,
+        "enforcementVisibility": 65,
+        "communityDensity": 55,
+        "economicPrecarity": 55
+      }
+    }
+  ],
+  "playabilityRationale": "El Paso offers a uniquely paradoxical gameplay environment: a city where 80%+ of residents share Latino heritage and local government actively supports immigrants, yet federal and state enforcement infrastructure is more concentrated than almost anywhere in America. The city embodies the tension between community belonging and state power. Players navigate a world where Spanish is the dominant language and Mexican culture is mainstream, but deportation flights depart daily from Fort Bliss and the Texas Attorney General wages legal warfare against beloved shelters. The binational dimension adds complexity: families are split across the river, cross-border networks provide resources but also surveillance exposure. Segundo Barrio and Chamizal offer deep community solidarity and organizing traditions dating back generations, while Northeast El Paso places players in the shadow of the nation's largest detention facility. The Annunciation House legal battle creates ongoing narrative tension about whether even faith-based sanctuary can survive. El Paso forces players to confront what it means when your community is the majority but your government treats you as suspect."
+}

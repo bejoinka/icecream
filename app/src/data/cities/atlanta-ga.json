@@ -1,0 +1,76 @@
+{
+  "id": "atlanta-ga",
+  "name": "Atlanta",
+  "state": "GA",
+  "overview": "Atlanta occupies a unique position as the economic and cultural capital of the New South, a majority-Black city with deep civil rights heritage now navigating rapid demographic transformation. The metropolitan area's Latino population has grown from negligible numbers in 1990 to over 600,000 today, concentrated along the Buford Highway corridor that stretches through DeKalb and Gwinnett counties. This growth occurred in a region historically defined by Black-white racial politics, creating complex dynamics as immigrant communities establish themselves in spaces without the institutional infrastructure or political representation that older Latino enclaves in the Southwest developed over generations. The city proper maintains progressive politics under mayors who have publicly opposed harsh enforcement, but Atlanta exists within a deeply hostile state apparatus.\n\nGeorgia was among the first states to pass aggressive immigration enforcement legislation with HB 87 in 2011, which required employers to use E-Verify, authorized local police to check immigration status during stops, and created state-level penalties for harboring or transporting undocumented immigrants. Governor Brian Kemp has positioned Georgia as a leader in immigration enforcement, and state law explicitly prohibits sanctuary city policies. Atlanta's city government has attempted to carve out space for non-cooperation, with police leadership historically instructing officers not to inquire about immigration status for non-criminal matters, but this protection is informal, legally tenuous, and subject to state override. The tension between Atlanta's identity as a beacon of Black political power and civil rights tradition and its subordination to a hostile state government creates a distinctive enforcement landscape where symbolic resistance coexists with structural vulnerability.",
+  "pulse": {
+    "federalCooperation": 55,
+    "dataDensity": 52,
+    "politicalCover": 38,
+    "civilSocietyCapacity": 58,
+    "bureaucraticInertia": 62
+  },
+  "neighborhoods": [
+    {
+      "id": "atlanta-ga-buford-highway",
+      "name": "Buford Highway Corridor",
+      "description": "A 15-mile stretch of strip malls, aging apartment complexes, and ethnic businesses that serves as metro Atlanta's primary immigrant gateway, spanning from Chamblee through Doraville into unincorporated DeKalb County. The corridor houses the region's largest concentrations of Mexican, Central American, Vietnamese, Chinese, and Korean communities in a landscape built for cars, not pedestrians, making it both a vibrant commercial hub and one of the most dangerous roads in Georgia for those without vehicles.",
+      "pulse": {
+        "trust": 60,
+        "suspicion": 65,
+        "enforcementVisibility": 60,
+        "communityDensity": 85,
+        "economicPrecarity": 75
+      }
+    },
+    {
+      "id": "atlanta-ga-clarkston",
+      "name": "Clarkston",
+      "description": "A tiny city of 14,000 within DeKalb County that has been called the most diverse square mile in America, resettled by refugee populations from over 40 countries since the 1980s. Unlike most immigrant-heavy areas, Clarkston has explicit institutional support through refugee resettlement agencies and a city government that embraces its identity as a sanctuary for the displaced, though Georgia state law limits what protections the city can formally offer.",
+      "pulse": {
+        "trust": 75,
+        "suspicion": 40,
+        "enforcementVisibility": 35,
+        "communityDensity": 90,
+        "economicPrecarity": 70
+      }
+    },
+    {
+      "id": "atlanta-ga-norcross",
+      "name": "Norcross / Jimmy Carter Boulevard",
+      "description": "A Gwinnett County area where Latino population growth has been fastest, with strip malls and apartment complexes housing working-class Mexican and Central American families. The area falls under Gwinnett County jurisdiction, where sheriff's office participation in 287(g) agreements has made local jail a direct pipeline to ICE detention, creating an enforcement environment far more hostile than Atlanta proper.",
+      "pulse": {
+        "trust": 45,
+        "suspicion": 75,
+        "enforcementVisibility": 70,
+        "communityDensity": 75,
+        "economicPrecarity": 80
+      }
+    },
+    {
+      "id": "atlanta-ga-chamblee",
+      "name": "Chamblee",
+      "description": "A small DeKalb County city along Buford Highway that has transformed from a historically white working-class area into a pan-Asian and Latino commercial hub, with significant gentrification pressures as MARTA rail access makes it attractive to developers. The city's international character is celebrated in official branding even as rising rents push immigrant families further out.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 55,
+        "enforcementVisibility": 50,
+        "communityDensity": 70,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "atlanta-ga-southwest-atlanta",
+      "name": "Southwest Atlanta",
+      "description": "Historically Black neighborhoods including West End and Cascade Heights where a smaller but growing Latino population lives alongside longtime African American residents. The area represents a different dynamic than the suburban immigrant corridors, with cross-racial coalition-building occurring in spaces shaped by generations of Black community organizing and political power.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 50,
+        "enforcementVisibility": 45,
+        "communityDensity": 65,
+        "economicPrecarity": 60
+      }
+    }
+  ],
+  "playabilityRationale": "Atlanta offers a distinctive gameplay experience as a Southern city where immigrant communities must navigate not just federal enforcement but an explicitly hostile state government that has systematically preempted local protections. Unlike sanctuary cities where players can count on official institutional support, Atlanta presents a landscape of informal, fragile protections where sympathetic city officials operate under severe legal constraints. The geographic dispersion of immigrant communities across county lines creates radically different enforcement environments within the same metropolitan area. A family living in DeKalb County faces different risks than one in Gwinnett, where 287(g) cooperation means any police encounter could lead to ICE detention. The Buford Highway corridor's car-dependent strip mall landscape creates isolation and vulnerability while also enabling economic survival through ethnic business networks. Atlanta's civil rights history provides moral authority and organizational infrastructure for resistance, but the tradition is rooted in Black-white politics that immigrant communities must learn to navigate. Players must build coalitions across racial lines, understand the patchwork of county jurisdictions, and reckon with a state government actively working to undermine local resistance. The city embodies the challenge facing immigrant families in the Sun Belt South, growing regions with weak institutional protections and hostile state governments where communities must build survival infrastructure largely from scratch."
+}

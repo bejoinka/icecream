@@ -1,0 +1,76 @@
+{
+  "id": "phoenix-az",
+  "name": "Phoenix",
+  "state": "AZ",
+  "overview": "Phoenix sits at the heart of Maricopa County, ground zero for the modern local immigration enforcement model. The Arpaio era (2005-2016) made this region the national laboratory for 287(g) task force operations, workplace raids, and 'attrition through enforcement' policies. While Arpaio is gone and the county has spent over $300 million in court-mandated reforms, the infrastructure and political will for enforcement remain deeply embedded. Arizona voters approved Proposition 314 in November 2024 by nearly 2-to-1, creating new state-level immigration crimes that echo the struck-down provisions of SB1070. Mesa Gateway Airport now serves as ICE Air's operational headquarters, with deportation flights to Latin America and Africa departing regularly.\n\nThe city of Phoenix itself exists in tension with the county and state. The Democrat-majority city council has resisted 287(g) agreements, and Phoenix Police Chief Matt Giordano has publicly stated immigration enforcement has no place in city policing. Yet advocates' 2025 petition to limit Phoenix-ICE cooperation was voted down. Community organizations like Aliento, the Florence Project, and Promise Arizona provide legal services and organizing capacity, but report declining engagement as families retreat from public life. The immigrant share of metro Phoenix's population is growing—nearly 49,000 international newcomers arrived in 2024 alone—but so is the enforcement apparatus designed to make their lives untenable.",
+  "pulse": {
+    "federalCooperation": 72,
+    "dataDensity": 68,
+    "politicalCover": 38,
+    "civilSocietyCapacity": 52,
+    "bureaucraticInertia": 45
+  },
+  "neighborhoods": [
+    {
+      "id": "phoenix-az-maryvale",
+      "name": "Maryvale",
+      "description": "Phoenix's most populous urban village, with deep Mexican immigrant roots and colorful homes reflecting homeland culture, but also the highest rate of police gun-pointing incidents in the city.",
+      "pulse": {
+        "trust": 28,
+        "suspicion": 72,
+        "enforcementVisibility": 68,
+        "communityDensity": 85,
+        "economicPrecarity": 74
+      }
+    },
+    {
+      "id": "phoenix-az-south-phoenix",
+      "name": "South Phoenix",
+      "description": "Historic Chicano neighborhood with multi-generational Mexican-American families alongside newer immigrants, featuring twice the immigrant share of the broader metro.",
+      "pulse": {
+        "trust": 35,
+        "suspicion": 62,
+        "enforcementVisibility": 55,
+        "communityDensity": 78,
+        "economicPrecarity": 71
+      }
+    },
+    {
+      "id": "phoenix-az-guadalupe",
+      "name": "Guadalupe",
+      "description": "Tiny incorporated town (pop. 5,200) surrounded by Tempe and Phoenix, with Yaqui Indigenous and Mexican heritage creating a distinct cultural enclave under demographic pressure.",
+      "pulse": {
+        "trust": 42,
+        "suspicion": 55,
+        "enforcementVisibility": 48,
+        "communityDensity": 82,
+        "economicPrecarity": 68
+      }
+    },
+    {
+      "id": "phoenix-az-central-city",
+      "name": "Central City",
+      "description": "Downtown-adjacent district where McDowell Road serves as a multicultural corridor, with refugee resettlement services and immigrant-owned businesses alongside gentrification pressure.",
+      "pulse": {
+        "trust": 38,
+        "suspicion": 58,
+        "enforcementVisibility": 52,
+        "communityDensity": 65,
+        "economicPrecarity": 62
+      }
+    },
+    {
+      "id": "phoenix-az-laveen",
+      "name": "Laveen",
+      "description": "Southwest Phoenix growth area with younger median age (32) and 7.6% non-citizen population, representing the aspirational suburban trajectory many immigrant families pursue.",
+      "pulse": {
+        "trust": 45,
+        "suspicion": 48,
+        "enforcementVisibility": 42,
+        "communityDensity": 58,
+        "economicPrecarity": 55
+      }
+    }
+  ],
+  "playabilityRationale": "Phoenix offers the definitive 'hostile territory' gameplay experience. This is where local immigration enforcement was perfected and where its costs are most visible—$300 million in civil rights settlements, shattered community trust, and a surveillance infrastructure that never went away. The city-county-state tension creates genuine uncertainty: Phoenix police may not enforce immigration law, but Maricopa County Sheriff's deputies and state troopers can. Prop 314's passage means new state crimes are being tested here first. Mesa Gateway's deportation flights make removal feel immediate and industrial. Yet the organizing infrastructure exists—Aliento, Florence Project, PLAN—and the city's Office of Refugee and Immigrant Support represents official acknowledgment that immigrant families belong. Players must navigate a landscape where the rules are actively being rewritten, where a traffic stop's outcome depends on which uniform approaches, and where community bonds must be rebuilt even as enforcement pressure intensifies."
+}

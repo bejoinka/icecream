@@ -1,0 +1,76 @@
+{
+  "id": "nashville-tn",
+  "name": "Nashville",
+  "state": "TN",
+  "overview": "Nashville presents a uniquely precarious environment for immigrant families, operating within one of the most enforcement-cooperative states in the nation while experiencing explosive population growth that has transformed its demographic character. Tennessee was among the first states to sign 287(g) agreements with ICE, and Davidson County (which encompasses Nashville through its consolidated Metro government) has maintained this cooperation despite periodic political pushback. The state legislature has repeatedly preempted local sanctuary efforts, passing laws that penalize jurisdictions that limit cooperation with federal immigration enforcement. Mayor John Cooper and his successor Freddie O'Connell have expressed sympathy for immigrant residents but lack the legal authority to implement meaningful protections, creating a gap between progressive municipal sentiment and the hard reality of state-mandated cooperation.\n\nNashville's immigrant population has grown dramatically over three decades, with the Nolensville Pike corridor emerging as the heart of a diverse community that includes one of the largest Kurdish populations in the United States (estimated 15,000-20,000), substantial Latino communities from Mexico and Central America, and growing East African populations. This corridor stretches from the old Antioch area through South Nashville, lined with halal markets, taquerias, Kurdish bakeries, and wire transfer services. However, rising housing costs and development pressure are displacing these communities outward to suburbs like Smyrna and La Vergne, fragmenting established networks. The Metro Police Department's participation in 287(g) programs means that any police encounter carries deportation risk, creating a climate where traffic stops become high-stakes events and crime reporting has plummeted in immigrant neighborhoods.",
+  "pulse": {
+    "federalCooperation": 78,
+    "dataDensity": 52,
+    "politicalCover": 28,
+    "civilSocietyCapacity": 45,
+    "bureaucraticInertia": 55
+  },
+  "neighborhoods": [
+    {
+      "id": "nashville-tn-nolensville-pike",
+      "name": "Nolensville Pike Corridor",
+      "description": "The backbone of immigrant Nashville stretching south from downtown, this commercial corridor hosts Kurdish, Latino, Somali, and Vietnamese businesses in aging strip malls, where families shop at international grocers and navigate daily life under the shadow of 287(g) enforcement.",
+      "pulse": {
+        "trust": 65,
+        "suspicion": 70,
+        "enforcementVisibility": 65,
+        "communityDensity": 80,
+        "economicPrecarity": 65
+      }
+    },
+    {
+      "id": "nashville-tn-antioch",
+      "name": "Antioch",
+      "description": "Once a white suburban community, now Nashville's most diverse area where Kurdish families have established deep roots alongside Latino and East African neighbors, though rapid apartment turnover and distant location create isolation from downtown resources.",
+      "pulse": {
+        "trust": 55,
+        "suspicion": 55,
+        "enforcementVisibility": 50,
+        "communityDensity": 70,
+        "economicPrecarity": 60
+      }
+    },
+    {
+      "id": "nashville-tn-casa-azafran",
+      "name": "Casa Azafran District",
+      "description": "Anchored by the Casa Azafran community center on Nolensville Pike, this area represents organized immigrant Nashville where nonprofits, legal aid, and cultural organizations cluster together, creating a rare hub of formal support infrastructure.",
+      "pulse": {
+        "trust": 75,
+        "suspicion": 45,
+        "enforcementVisibility": 40,
+        "communityDensity": 85,
+        "economicPrecarity": 50
+      }
+    },
+    {
+      "id": "nashville-tn-hermitage",
+      "name": "Hermitage",
+      "description": "Working-class eastern suburb where Latino construction workers and service industry employees have settled in older apartment complexes, far from downtown oversight but also far from immigrant advocacy networks.",
+      "pulse": {
+        "trust": 40,
+        "suspicion": 60,
+        "enforcementVisibility": 55,
+        "communityDensity": 45,
+        "economicPrecarity": 75
+      }
+    },
+    {
+      "id": "nashville-tn-the-nations",
+      "name": "The Nations",
+      "description": "Formerly a working-class immigrant neighborhood near the Cumberland River, now rapidly gentrifying with breweries and new construction displacing longtime Latino residents to outer suburbs, representing the erasure phase of Nashville's immigrant geography.",
+      "pulse": {
+        "trust": 35,
+        "suspicion": 50,
+        "enforcementVisibility": 35,
+        "communityDensity": 30,
+        "economicPrecarity": 70
+      }
+    }
+  ],
+  "playabilityRationale": "Nashville offers a compelling gameplay environment defined by the tension between a politically sympathetic city government and a state that has systematically stripped away its ability to protect immigrant residents. The 287(g) dynamic means that everyday encounters with Metro Police carry immediate deportation consequences, making navigation of public space a constant calculation. The Nolensville Pike corridor provides a rich setting where Kurdish, Latino, and East African communities have built parallel support networks, but these are under pressure from both enforcement and gentrification. Players experience the particular vulnerability of communities in a 'purple' city trapped within a 'red' state - where progressive voters and sympathetic officials exist but lack legal tools to translate sentiment into protection. The Kurdish community adds distinctive gameplay elements as political refugees with strong asylum claims but complex legal status; their story intersects with geopolitics in ways other immigrant narratives do not. The gentrification dynamic in areas like The Nations shows how economic displacement can be as devastating as enforcement, scattering networks that took decades to build. Nashville's civil society infrastructure, while present around Casa Azafran, is thinner than in traditional sanctuary cities, making community organizing more fragile and player choices around building trust networks more consequential."
+}
