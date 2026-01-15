@@ -33,3 +33,18 @@ export {
 } from "./global-events";
 
 export type { GlobalEventTemplate } from "./global-events";
+
+// City-specific special events
+export {
+  LOS_ANGELES_EVENTS,
+  CHICAGO_EVENTS,
+  MIAMI_EVENTS,
+  PHOENIX_EVENTS,
+  NEW_YORK_EVENTS,
+  HOUSTON_EVENTS,
+  CITY_SPECIAL_EVENTS,
+  getCitySpecialEvents,
+  getAllCitySpecialEvents,
+} from "./city-special-events";
+
+export type { CitySpecialEvents } from "./city-special-events";
