@@ -43,6 +43,16 @@ bd sync               # Sync with git
 
 ## Planning Agent (Rule of 3)
 
+### Required Reading (MANDATORY)
+
+Before doing ANY planning work, you MUST read and understand:
+
+1. **[FACT_SHEET.md](./FACT_SHEET.md)** - Core game design, non-negotiables, tone, and ethical guardrails
+
+This is non-negotiable. Plans that violate the design principles in FACT_SHEET.md will be rejected.
+
+---
+
 When acting as a **planning agent** (launched via `scripts/plan-feature.sh`), apply the **Rule of 3** to decompose work into non-overlapping, independently testable units. The goal is to **eliminate merge conflicts** by ensuring workers touch distinct files.
 
 ### Pass 1: Decomposition
@@ -82,14 +92,56 @@ For each work unit, verify no file overlap with other units:
 2. Add dependency constraints so overlapping work is sequential, OR
 3. Document the expected merge strategy if overlap is unavoidable
 
+### Pass 4: Create Review Task
+
+Every plan MUST include a **review task** as the final step. This task:
+- Depends on ALL other work units (runs last)
+- Validates completed work against project requirements
+
+Create the review task:
+```bash
+bd create "Review: Validate work against FACT_SHEET" --type task --priority 1
+bd dep add <review-id> <unit-a-id>  # Review depends on all units
+bd dep add <review-id> <unit-b-id>
+bd dep add <review-id> <unit-c-id>
+# ... add dependency for every work unit
+```
+
+The review task description MUST include:
+1. **Epic reference** - Link to the parent epic/feature being implemented
+2. **Required reading list** - Always includes FACT_SHEET.md, plus any other docs relevant to this feature
+3. **Review checklist** - Specific items to verify based on the work planned
+
+Example review task description:
+```
+## Review: [Feature Name]
+
+### Required Reading (MANDATORY)
+- [ ] FACT_SHEET.md - Core design principles and ethical guardrails
+- [ ] [Epic ID] - Parent epic with full context
+- [ ] [Any other relevant docs listed in the epic]
+
+### Review Checklist
+- [ ] Satire punches up at systems, not at victims
+- [ ] Educational, not instructional - teaches rights, not evasion
+- [ ] Systemic framing - failure feels political, not personal
+- [ ] No violations of ethical guardrails
+- [ ] Implementation matches epic requirements
+- [ ] Code quality and test coverage adequate
+
+### If Issues Found
+Create follow-up issues for any violations or gaps discovered.
+```
+
 ### Planning Output
 
-After all three passes:
+After all four passes:
 1. Create beads with `bd create` for each work unit
 2. Set dependencies with `bd dep add`
 3. Ensure each bead is independently testable
-4. Run `bd sync` to persist
-5. Report the beads created and how many workers can run in parallel
+4. **Create the review task that depends on all work units**
+5. Run `bd sync` to persist
+6. Report the beads created and how many workers can run in parallel
 
 ---
 
@@ -170,3 +222,69 @@ git push                   # Your branch is pushed
 ```
 
 Report what you completed and any issues for follow-up.
+
+---
+
+## Reviewer Agent (Review Tasks)
+
+When you pick up a **review task** (identified by "Review:" prefix), you are acting as a quality gate for completed work.
+
+### Required Reading (MANDATORY)
+
+Before reviewing, you MUST read ALL of the following in order:
+
+1. **[FACT_SHEET.md](./FACT_SHEET.md)** - Core game design, non-negotiables, tone, and ethical guardrails
+2. **The parent epic** - Use `bd show <epic-id>` to get full context on what was planned
+3. **Any additional docs listed in the review task description**
+
+Do NOT skip this step. You cannot review work you don't understand.
+
+### Review Workflow
+
+#### 1. Gather Context
+
+```bash
+bd show <review-task-id>           # Get the review task with checklist
+bd show <epic-id>                   # Read the parent epic
+```
+
+Read FACT_SHEET.md and any other documents listed in the review task.
+
+#### 2. Review the Completed Work
+
+For each work unit that was completed:
+- Read the code changes (use `git log` and `git diff` against the base branch)
+- Verify the implementation matches the epic requirements
+- Check against FACT_SHEET.md principles:
+  - **Satire punches up** - Does it target systems/power, not victims?
+  - **Educational, not instructional** - Does it teach rights, not evasion tactics?
+  - **Systemic framing** - Does failure feel political/structural, not personal?
+  - **Opacity by design** - Do players experience consequences before causes?
+  - **Ethical guardrails** - Any violations of the non-negotiables?
+
+#### 3. Document Findings
+
+If issues are found:
+```bash
+bd create "Fix: [describe violation]" --type bug --priority 1
+bd note <review-task-id> "Found issue: [brief description], created follow-up [new-issue-id]"
+```
+
+If no issues:
+```bash
+bd note <review-task-id> "Review passed. All work aligns with FACT_SHEET requirements."
+```
+
+#### 4. Complete the Review
+
+```bash
+bd close <review-task-id> --reason "Review complete: [passed/N issues filed]"
+bd sync
+git push
+```
+
+### Review Verdicts
+
+- **PASSED** - All work aligns with FACT_SHEET.md and epic requirements
+- **PASSED WITH NOTES** - Minor issues documented but not blocking
+- **FAILED** - Violations found, follow-up issues created, work should not ship until resolved
