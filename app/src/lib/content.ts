@@ -76,7 +76,9 @@ export async function getCityWithNeighborhoods(
     .order("sort_order");
 
   if (neighborhoodError) {
-    throw new Error(`Failed to fetch neighborhoods: ${neighborhoodError.message}`);
+    throw new Error(
+      `Failed to fetch neighborhoods: ${neighborhoodError.message}`
+    );
   }
 
   return {
@@ -136,7 +138,9 @@ export async function deleteCity(id: string): Promise<void> {
 /**
  * Get all neighborhoods for a city
  */
-export async function getNeighborhoods(cityId: string): Promise<NeighborhoodRow[]> {
+export async function getNeighborhoods(
+  cityId: string
+): Promise<NeighborhoodRow[]> {
   const { data, error } = await supabase
     .from("neighborhoods")
     .select("*")
@@ -151,7 +155,9 @@ export async function getNeighborhoods(cityId: string): Promise<NeighborhoodRow[
 /**
  * Get a neighborhood by ID
  */
-export async function getNeighborhood(id: string): Promise<NeighborhoodRow | null> {
+export async function getNeighborhood(
+  id: string
+): Promise<NeighborhoodRow | null> {
   const { data, error } = await supabase
     .from("neighborhoods")
     .select("*")
@@ -223,6 +229,7 @@ export async function upsertNeighborhoods(
     .upsert(neighborhoods, { onConflict: "id" })
     .select();
 
-  if (error) throw new Error(`Failed to upsert neighborhoods: ${error.message}`);
+  if (error)
+    throw new Error(`Failed to upsert neighborhoods: ${error.message}`);
   return data as NeighborhoodRow[];
 }
