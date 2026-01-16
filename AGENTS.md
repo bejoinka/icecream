@@ -41,6 +41,32 @@ bd sync               # Sync with git
 
 ---
 
+## Content Generation
+
+When creating any written content for the game—UI copy, event descriptions, dialogue, satirical framing, or page content—you MUST follow the **[TONE_AND_LANGUAGE_GUIDE.md](./TONE_AND_LANGUAGE_GUIDE.md)**.
+
+### Before Writing Content
+
+1. Read TONE_AND_LANGUAGE_GUIDE.md completely
+2. Identify the content type (UI Microcopy, Event Description, Dialogue, or Satirical Framing)
+3. Apply the appropriate voice and register from the guide
+
+### Content Checklist
+
+Before finalizing any content, verify using the guide's checklist:
+
+- [ ] Does this punch up at systems, not down at victims?
+- [ ] Is this educational rather than instructional?
+- [ ] Does failure feel political, not personal?
+- [ ] Does the player discover meaning, or is it handed to them?
+- [ ] Would this work in a documentary about bureaucratic violence?
+- [ ] Is the satire deadpan, not winking?
+- [ ] Are we showing restraint with trauma?
+
+If any answer is "no," revise before shipping.
+
+---
+
 ## Planning Agent (Rule of 3)
 
 ### Required Reading (MANDATORY)
@@ -48,6 +74,7 @@ bd sync               # Sync with git
 Before doing ANY planning work, you MUST read and understand:
 
 1. **[FACT_SHEET.md](./FACT_SHEET.md)** - Core game design, non-negotiables, tone, and ethical guardrails
+2. **[TONE_AND_LANGUAGE_GUIDE.md](./TONE_AND_LANGUAGE_GUIDE.md)** - Voice, language register, and content standards (required for content work)
 
 This is non-negotiable. Plans that violate the design principles in FACT_SHEET.md will be rejected.
 
@@ -118,6 +145,7 @@ Example review task description:
 
 ### Required Reading (MANDATORY)
 - [ ] FACT_SHEET.md - Core design principles and ethical guardrails
+- [ ] TONE_AND_LANGUAGE_GUIDE.md - Voice and language standards (for content work)
 - [ ] [Epic ID] - Parent epic with full context
 - [ ] [Any other relevant docs listed in the epic]
 
@@ -126,6 +154,7 @@ Example review task description:
 - [ ] Educational, not instructional - teaches rights, not evasion
 - [ ] Systemic framing - failure feels political, not personal
 - [ ] No violations of ethical guardrails
+- [ ] Content follows TONE_AND_LANGUAGE_GUIDE voice and register (if applicable)
 - [ ] Implementation matches epic requirements
 - [ ] Code quality and test coverage adequate
 
@@ -234,8 +263,9 @@ When you pick up a **review task** (identified by "Review:" prefix), you are act
 Before reviewing, you MUST read ALL of the following in order:
 
 1. **[FACT_SHEET.md](./FACT_SHEET.md)** - Core game design, non-negotiables, tone, and ethical guardrails
-2. **The parent epic** - Use `bd show <epic-id>` to get full context on what was planned
-3. **Any additional docs listed in the review task description**
+2. **[TONE_AND_LANGUAGE_GUIDE.md](./TONE_AND_LANGUAGE_GUIDE.md)** - Voice, language register, and content standards (for content reviews)
+3. **The parent epic** - Use `bd show <epic-id>` to get full context on what was planned
+4. **Any additional docs listed in the review task description**
 
 Do NOT skip this step. You cannot review work you don't understand.
 
