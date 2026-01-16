@@ -33,15 +33,16 @@ mkdir -p .worktrees
 # Create worktree if it doesn't exist
 if [ ! -d "$WORKTREE_PATH" ]; then
     echo "Creating worktree..."
-    bd worktree create "$WORKTREE_PATH" --branch "$WORKER_BRANCH" "$FEATURE_BRANCH"
+    # First checkout the feature branch, then create worktree from it
+    git checkout "$FEATURE_BRANCH" 2>/dev/null || git checkout -b "$FEATURE_BRANCH"
+    bd worktree create "$WORKTREE_PATH" --branch="$WORKER_BRANCH"
     echo ""
 fi
 
 cd "$WORKTREE_PATH"
 
 echo "Launching worker agent in $WORKTREE_PATH..."
-echo "The agent will read AGENTS.md and pick up work with bd ready."
 echo ""
 
-# Launch claude - it reads AGENTS.md automatically
-claude
+# Launch claude with immediate work instruction and auto-approve permissions
+claude --dangerously-skip-permissions "Read AGENTS.md and pick up work immediately with bd ready. DO NOT ASK ME IF YOU CAN GET STARTED. IMMEDIATELY GET STARTED."
