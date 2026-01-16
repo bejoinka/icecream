@@ -7,7 +7,7 @@ This is a dark satirical survival RPG game project (working title TBD). Before m
 Before doing ANY work in this repo, read these documents in order:
 
 1. **[FACT_SHEET.md](./FACT_SHEET.md)** - Core game design, non-negotiables, tone, and ethical guardrails
-2. **[TONE_AND_LANGUAGE_GUIDE.md](./TONE_AND_LANGUAGE_GUIDE.md)** - Voice, language register, and content standards for all written content
+2. **[TONE_AND_LANGUAGE_GUIDE.md](./TONE_AND_LANGUAGE_GUIDE.md)** - Voice, style, and language for all content
 3. **[SYSTEMS_PULSES_AND_EVENTS.md](./SYSTEMS_PULSES_AND_EVENTS.md)** - Technical spec for the city/neighborhood pulse system
 4. **[CITY_PROFILING_BRIEF_AGENT_INSTRUCTIONS.md](./CITY_PROFILING_BRIEF_AGENT_INSTRUCTIONS.md)** - Instructions for city profiling work
 5. **[AGENTS.md](./AGENTS.md)** - Workflow and session completion requirements

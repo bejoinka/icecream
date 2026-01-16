@@ -2,6 +2,20 @@
 
 This project uses **bd** (beads) for issue tracking. Run `bd onboard` to get started.
 
+## Required Reading for Content Work
+
+Before creating any player-facing content (UI copy, events, dialogue, descriptions), you MUST read:
+
+1. **[FACT_SHEET.md](./FACT_SHEET.md)** - Core design principles and ethical guardrails
+2. **[TONE_AND_LANGUAGE_GUIDE.md](./TONE_AND_LANGUAGE_GUIDE.md)** - Voice, style, and language rules
+
+Key principles from the tone guide:
+- **Satire punches up** — target systems and power, never victims
+- **Educational, not instructional** — teach rights, not evasion tactics
+- **Systemic framing** — failure feels political, not personal
+- **Opacity by design** — consequences before causes
+- **Restraint** — avoid exclamation points, superlatives, and emotional manipulation
+
 ## Quick Reference
 
 ```bash
