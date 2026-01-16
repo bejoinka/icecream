@@ -1,2 +1,6 @@
 # Worktrees directory for parallel agent development
 .worktrees/
+# bd worktree
+.worktrees/supabase-w1/
+# bd worktree
+.worktrees/supabase-w2/
