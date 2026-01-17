@@ -85,3 +85,10 @@ export const DEFAULT_FAMILY_IMPACT: FamilyImpact = {
   cohesion: 70,
   trustNetworkStrength: 40,
 };
+
+// Update cadence constants
+export const UPDATE_CADENCE = {
+  GLOBAL_MIN: 14,
+  GLOBAL_MAX: 28,
+  CITY: 7,
+} as const;
