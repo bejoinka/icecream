@@ -499,14 +499,15 @@ export function validateCityEventTemplate(template: unknown): ValidationResult {
 /**
  * Check if pulse values meet trigger conditions
  */
-export function checkTriggers<T extends Record<string, number>>(
+export function checkTriggers<T extends Record<string, number> | object>(
   pulse: T,
-  triggers?: Partial<Record<keyof T, number>>
+  triggers?: Partial<Record<keyof T | string, number>>
 ): boolean {
   if (!triggers) return true;
 
   for (const [key, threshold] of Object.entries(triggers)) {
-    const pulseValue = pulse[key];
+    if (threshold === undefined) continue;
+    const pulseValue = (pulse as Record<string, unknown>)[key];
     if (typeof pulseValue !== "number") continue;
 
     // Key starting with "min" means pulse must be >= threshold
@@ -534,6 +535,7 @@ export function triggerProbability(
   let probability = 1.0;
 
   for (const [key, threshold] of Object.entries(triggers)) {
+    if (threshold === undefined) continue;
     const pulseValue = pulse[key];
     if (typeof pulseValue !== "number") continue;
 
@@ -589,6 +591,7 @@ export function scaleEffects<T extends Record<string, number>>(
   const scaled: Partial<Record<keyof T, number>> = {};
 
   for (const [key, value] of Object.entries(effects)) {
+    if (value === undefined) continue;
     scaled[key as keyof T] = (value * multiplier) as T[keyof T];
   }
 
@@ -675,6 +678,7 @@ export function aggregateEventEffects<T extends Record<string, number>>(
 
   for (const event of events) {
     for (const [key, value] of Object.entries(event.effects)) {
+      if (value === undefined) continue;
       const current = aggregated[key as keyof T] ?? 0;
       aggregated[key as keyof T] = (current + value) as T[keyof T];
     }

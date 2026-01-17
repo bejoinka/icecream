@@ -16,3 +16,6 @@ export * from "./game";
 
 // Database types (Supabase)
 export * from "./database";
+
+// Re-export UPDATE_CADENCE from pulse to avoid ambiguity
+export { UPDATE_CADENCE } from "./pulse";

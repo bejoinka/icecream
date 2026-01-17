@@ -16,6 +16,9 @@ import type {
   CityWithNeighborhoods,
 } from "@/types/database";
 
+/** City summary type for dashboard (alias for CityRow) */
+export type CitySummary = CityRow;
+
 // ============================================================================
 // City Operations
 // ============================================================================
@@ -32,6 +35,20 @@ export async function getCities(): Promise<CityRow[]> {
 
   if (error) throw new Error(`Failed to fetch cities: ${error.message}`);
   return data as CityRow[];
+}
+
+/**
+ * Get all city IDs (for static path generation)
+ */
+export async function getCityIds(): Promise<string[]> {
+  const { data, error } = await supabase
+    .from("cities")
+    .select("id")
+    .eq("enabled", true)
+    .order("name");
+
+  if (error) throw new Error(`Failed to fetch city IDs: ${error.message}`);
+  return (data as CityRow[]).map((c) => c.id);
 }
 
 /**

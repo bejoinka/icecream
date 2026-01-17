@@ -54,6 +54,8 @@ export interface CityEventTemplate {
   durationRange: [number, number];
   weight: number;
   effects: CityEvent["effects"];
+  /** Optional impact radius - defaults to "All" if not specified */
+  impactRadius?: "All" | string[];
 }
 
 /**

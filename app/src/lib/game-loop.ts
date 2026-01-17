@@ -670,8 +670,8 @@ export function runGameLoop(
     ending: state.ending
       ? {
           type: state.ending.type,
-          victoryType: state.ending.victoryType,
-          reason: state.ending.reason,
+          victoryType: state.ending.type === "victory" ? state.ending.victoryType : undefined,
+          reason: state.ending.type === "failure" ? state.ending.reason : undefined,
           turn: state.ending.turn,
         }
       : null,
