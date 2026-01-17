@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getCities, CitySummary } from "@/lib/content";
+import { getCities } from "@/lib/content";
 import { PulseBar } from "@/components/dashboard/PulseBar";
+import type { CityRow } from "@/types/database";
 
 export const metadata: Metadata = {
   title: "Dashboard - City Pulse Overview",
   description: "Monitor pulse levels and enforcement activity across all cities.",
 };
 
-function CityCard({ city }: { city: CitySummary }) {
+function CityCard({ city }: { city: CityRow }) {
   return (
     <Link
       href={`/dashboard/cities/${city.id}`}
