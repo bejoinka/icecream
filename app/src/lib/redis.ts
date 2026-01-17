@@ -62,3 +62,11 @@ export async function touchSession(sessionId: string): Promise<void> {
   const redis = getRedis();
   await redis.expire(sessionKey(sessionId), SESSION_TTL);
 }
+
+// Delete all simulator state (all sessions)
+export async function deleteAllSessions(): Promise<number> {
+  const redis = getRedis();
+  const keys = await redis.keys(`${SESSION_PREFIX}*`);
+  if (keys.length === 0) return 0;
+  return await redis.del(...keys);
+}
