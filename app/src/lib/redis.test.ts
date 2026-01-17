@@ -242,5 +242,114 @@ describe("redis", () => {
 
       expect(deserialized).toEqual(originalState);
     });
+
+    it("handles empty objects", async () => {
+      mockRedisInstance.setex.mockResolvedValue("OK");
+      const emptyState = {};
+      await setGameState("empty", emptyState);
+      mockRedisInstance.get.mockResolvedValue(JSON.stringify(emptyState));
+
+      const result = await getGameState("empty");
+      expect(result).toEqual({});
+    });
+
+    it("handles arrays as state", async () => {
+      mockRedisInstance.setex.mockResolvedValue("OK");
+      const arrayState = [1, 2, 3, { key: "value" }];
+      await setGameState("array-session", arrayState);
+      mockRedisInstance.get.mockResolvedValue(JSON.stringify(arrayState));
+
+      const result = await getGameState("array-session");
+      expect(result).toEqual(arrayState);
+    });
+  });
+
+  describe("session key edge cases", () => {
+    it("handles special characters in session IDs", () => {
+      expect(sessionKey("session-with-dashes")).toBe("icecream:session:session-with-dashes");
+      expect(sessionKey("session_with_underscores")).toBe("icecream:session:session_with_underscores");
+      expect(sessionKey("session.with.dots")).toBe("icecream:session:session.with.dots");
+      expect(sessionKey("session:with:colons")).toBe("icecream:session:session:with:colons");
+    });
+
+    it("handles empty string session ID", () => {
+      expect(sessionKey("")).toBe("icecream:session:");
+    });
+
+    it("handles UUID-like session IDs", () => {
+      const uuid = "a1b2c3d4-e5f6-7890-abcd-ef1234567890";
+      expect(sessionKey(uuid)).toBe(`icecream:session:${uuid}`);
+    });
+  });
+
+  describe("getGameState error handling", () => {
+    let mockRedisInstance: any;
+
+    beforeEach(() => {
+      mockRedisInstance = getRedis();
+    });
+
+    it("returns null for empty string", async () => {
+      mockRedisInstance.get.mockResolvedValue("");
+
+      const result = await getGameState("empty-string-session");
+      expect(result).toBeNull();
+    });
+
+    it("throws on Redis get error", async () => {
+      mockRedisInstance.get.mockRejectedValue(new Error("Redis connection error"));
+
+      await expect(getGameState("error-session")).rejects.toThrow("Redis connection error");
+    });
+
+    it("throws SyntaxError for invalid JSON", async () => {
+      mockRedisInstance.get.mockResolvedValue("invalid-json{");
+
+      await expect(getGameState("malformed-session")).rejects.toThrow(SyntaxError);
+    });
+  });
+
+  describe("sessionExists error handling", () => {
+    let mockRedisInstance: any;
+
+    beforeEach(() => {
+      mockRedisInstance = getRedis();
+    });
+
+    it("throws on Redis error", async () => {
+      mockRedisInstance.exists.mockRejectedValue(new Error("Redis connection error"));
+
+      await expect(sessionExists("error-session")).rejects.toThrow("Redis connection error");
+    });
+  });
+
+  describe("setGameState operations", () => {
+    let mockRedisInstance: any;
+
+    beforeEach(() => {
+      mockRedisInstance = getRedis();
+    });
+
+    it("stores primitive values", async () => {
+      mockRedisInstance.setex.mockResolvedValue("OK");
+      await setGameState("primitive", 42);
+
+      expect(mockRedisInstance.setex).toHaveBeenCalledWith(
+        "icecream:session:primitive",
+        60 * 60 * 24 * 7,
+        "42"
+      );
+    });
+
+    it("stores string values", async () => {
+      mockRedisInstance.setex.mockResolvedValue("OK");
+      await setGameState("string-session", "hello world");
+
+      expect(mockRedisInstance.setex).toHaveBeenCalledWith(
+        "icecream:session:string-session",
+        60 * 60 * 24 * 7,
+        "\"hello world\""
+      );
+    });
   });
 });
