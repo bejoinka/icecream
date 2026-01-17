@@ -1,161 +1,101 @@
+import { NextRequest, NextResponse } from "next/server";
+import { getGameState, setGameState, sessionExists } from "@/lib/redis";
+import type { GameState, ChoiceRecord } from "@/types/game";
+
+const SIMULATOR_SESSION_KEY = "simulator";
+
 /**
  * POST /api/admin/simulator/choose
- *
- * Submits player choices for the current decision.
- * Advances to the consequence phase and applies effects.
+ * Records a player's choice for the current decision
  */
-
-import { NextRequest, NextResponse } from "next/server";
-import { loadSession } from "@/lib/session";
-import { setGameState } from "@/lib/redis";
-import { executeTurn, TurnContext, recordChoice } from "@/lib/game-loop";
-import { GameState, FamilyImpact } from "@/types";
-import { NEIGHBORHOOD_EVENT_POOL, CITY_EVENT_POOL } from "@/data/events";
-import { checkVictoryConditions } from "@/lib/game-loop";
-
-export const dynamic = "force-dynamic";
-
-interface ChooseRequest {
-  choiceIds: string[];
-}
-
-interface ChooseResponse {
-  state: GameState;
-  effectsApplied: Partial<FamilyImpact>;
-  ending: {
-    type: "victory" | "failure" | null;
-    victoryType?: string;
-    reason?: string;
-  };
-}
-
-/**
- * Get turn context with event templates
- */
-function getTurnContext(): TurnContext {
-  return {
-    neighborhoodEventTemplates: NEIGHBORHOOD_EVENT_POOL,
-    cityEventTemplates: CITY_EVENT_POOL,
-  };
-}
-
 export async function POST(request: NextRequest) {
+  // Check admin API key
+  const apiKey = request.headers.get("x-api-key");
+  if (apiKey !== process.env.ADMIN_API_KEY) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
-    const body = await request.json() as ChooseRequest;
+    const exists = await sessionExists(SIMULATOR_SESSION_KEY);
+
+    if (!exists) {
+      return NextResponse.json(
+        { error: "No simulator session found" },
+        { status: 404 }
+      );
+    }
+
+    const state = await getGameState<GameState>(SIMULATOR_SESSION_KEY);
+    if (!state) {
+      return NextResponse.json(
+        { error: "Failed to load simulator state" },
+        { status: 500 }
+      );
+    }
+
+    const body = await request.json();
     const { choiceIds } = body;
 
     // Validate request
-    if (!Array.isArray(choiceIds) || choiceIds.length === 0) {
+    if (!choiceIds || !Array.isArray(choiceIds)) {
       return NextResponse.json(
-        {
-          error: "invalid_request",
-          message: "choiceIds must be a non-empty array",
-        } as const,
+        { error: "choiceIds is required and must be an array" },
         { status: 400 }
       );
     }
 
-    // Load session
-    const { sessionId, state: existingState, isNew } = await loadSession<GameState>();
-
-    if (isNew || !existingState) {
-      return NextResponse.json(
-        {
-          error: "no_game",
-          message: "No active game. Call /next to start a game.",
-        } as const,
-        { status: 400 }
-      );
-    }
-
-    const state = existingState;
-
-    // Check if game has ended
-    if (state.ending) {
-      return NextResponse.json({
-        state,
-        effectsApplied: {},
-        ending: {
-          type: state.ending.type,
-          victoryType: "victoryType" in state.ending ? state.ending.victoryType : undefined,
-          reason: state.ending.type === "failure" ? state.ending.reason : undefined,
-        },
-      });
-    }
-
-    // Check if there's a decision waiting
     if (!state.currentDecision) {
       return NextResponse.json(
-        {
-          error: "no_decision",
-          message: "No active decision. Call /next first.",
-        } as const,
+        { error: "No active decision to respond to" },
         { status: 400 }
       );
     }
 
-    // Validate choice IDs
-    const validChoiceIds = state.currentDecision.choices.map((c) => c.id);
-    const invalidChoiceIds = choiceIds.filter((id) => !validChoiceIds.includes(id));
-
-    if (invalidChoiceIds.length > 0) {
-      return NextResponse.json(
-        {
-          error: "invalid_choices",
-          message: `Invalid choice IDs: ${invalidChoiceIds.join(", ")}`,
-        } as const,
-        { status: 400 }
-      );
-    }
-
-    // Calculate effects to report back
-    const selectedChoices = state.currentDecision.choices.filter((c) =>
+    // Validate choices exist
+    const validChoices = state.currentDecision.choices.filter((c) =>
       choiceIds.includes(c.id)
     );
-    const effectsApplied = selectedChoices.reduce(
-      (acc, choice) => {
-        if (choice.effects) {
-          // Merge effects by summing numeric values
-          for (const [key, value] of Object.entries(choice.effects)) {
-            if (typeof value === "number") {
-              acc[key] = (acc[key] || 0) + value;
-            }
-          }
-        }
-        return acc;
-      },
-      {} as Partial<FamilyImpact>
-    );
 
-    // Get turn context and advance
-    const ctx = getTurnContext();
-    const lastGlobalUpdate = state.turn - 1;
+    if (validChoices.length === 0) {
+      return NextResponse.json(
+        { error: "No valid choices provided" },
+        { status: 400 }
+      );
+    }
 
-    // Process the choice and advance to consequence
-    const result = executeTurn(state, ctx, lastGlobalUpdate, choiceIds);
+    // Apply choice effects to family
+    let family = { ...state.family };
+    for (const choice of validChoices) {
+      if (choice.effects) {
+        family = { ...family, ...choice.effects };
+      }
+    }
 
-    // Check victory conditions
-    const finalState = checkVictoryConditions(result.state);
+    // Record the choice
+    const record: ChoiceRecord = {
+      turn: state.turn || 1,
+      decisionId: state.currentDecision.id,
+      choiceIds,
+      effects: validChoices.reduce(
+        (acc, c) => ({ ...acc, ...c.effects }),
+        {} as Partial<typeof state.family>
+      ),
+    };
 
-    // Save updated state
-    await setGameState(sessionId, finalState);
+    // Update state
+    state.family = family;
+    state.choiceHistory = [...(state.choiceHistory || []), record];
+    state.currentDecision = null;
+    state.phase = "consequence";
+    state.updatedAt = new Date().toISOString();
 
-    return NextResponse.json({
-      state: finalState,
-      effectsApplied,
-      ending: {
-        type: finalState.ending?.type ?? null,
-        victoryType: finalState.ending?.type === "victory" ? finalState.ending.victoryType : undefined,
-        reason: finalState.ending?.type === "failure" ? finalState.ending.reason : undefined,
-      },
-    });
+    await setGameState(SIMULATOR_SESSION_KEY, state);
+
+    return NextResponse.json(state);
   } catch (error) {
-    console.error("Error processing choice:", error);
+    console.error("POST /api/admin/simulator/choose error:", error);
     return NextResponse.json(
-      {
-        error: "internal_error",
-        message: "Failed to process choice",
-      } as const,
+      { error: "Failed to record choice" },
       { status: 500 }
     );
   }
