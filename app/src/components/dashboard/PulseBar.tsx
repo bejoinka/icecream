@@ -44,7 +44,7 @@ export function PulseBar({
           />
         </div>
         <span className="text-xs text-zinc-600 w-6 text-right">
-          {Math.round(value)}
+          {Math.round(clampedValue)}
         </span>
       </div>
     );
@@ -54,7 +54,7 @@ export function PulseBar({
     <div className="mb-2">
       <div className="flex justify-between text-xs mb-1">
         <span className="text-zinc-400">{label}</span>
-        <span className="text-zinc-500">{Math.round(value)}</span>
+        <span className="text-zinc-500">{Math.round(clampedValue)}</span>
       </div>
       <div className="h-1.5 bg-zinc-700 rounded-full overflow-hidden">
         <div

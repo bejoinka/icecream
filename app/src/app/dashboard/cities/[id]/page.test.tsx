@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import CityDetailPage from "./page";
-import type { CityWithNeighborhoods } from "@/lib/content";
+import type { CityWithNeighborhoods } from "@/types/database";
 
 vi.mock("@/lib/content", () => ({
   getCityWithNeighborhoods: vi.fn(),
@@ -176,6 +176,6 @@ describe("CityDetailPage", () => {
     });
     render(page);
     expect(screen.getByText("Atlanta")).toBeInTheDocument();
-    expect(screen.getByText("Neighborhoods")).toBeInTheDocument();
+    expect(screen.getByText(/Neighborhoods/)).toBeInTheDocument();
   });
 });

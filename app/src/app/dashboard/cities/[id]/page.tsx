@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCity, getCityIds } from "@/lib/content";
+import { getCityWithNeighborhoods, getCityIds } from "@/lib/content";
 import { PulseBar } from "@/components/dashboard/PulseBar";
-import { Neighborhood } from "@/types/city";
+import type { Neighborhood } from "@/types/city";
 
 interface CityPageProps {
   params: Promise<{ id: string }>;
@@ -17,7 +17,7 @@ export async function generateMetadata({
   params,
 }: CityPageProps): Promise<Metadata> {
   const { id } = await params;
-  const city = getCity(id);
+  const city = await getCityWithNeighborhoods(id);
 
   if (!city) {
     return { title: "City Not Found" };
@@ -77,7 +77,7 @@ function NeighborhoodCard({ neighborhood }: { neighborhood: Neighborhood }) {
 
 export default async function CityPage({ params }: CityPageProps) {
   const { id } = await params;
-  const city = getCity(id);
+  const city = await getCityWithNeighborhoods(id);
 
   if (!city) {
     notFound();

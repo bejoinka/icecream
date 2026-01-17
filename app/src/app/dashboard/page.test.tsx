@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import DashboardPage from "./page";
-import type { CityData } from "@/lib/content";
+import type { CityRow } from "@/types/database";
 
 vi.mock("@/lib/content", () => ({
   getCities: vi.fn(),
@@ -21,7 +21,7 @@ const mockGetCities = vi.mocked(
   (await import("@/lib/content")).getCities
 );
 
-const mockCities: CityData[] = [
+const mockCities: CityRow[] = [
   {
     id: "atlanta-ga",
     name: "Atlanta",
@@ -59,7 +59,7 @@ describe("DashboardPage", () => {
     mockGetCities.mockResolvedValue(mockCities);
     const page = await DashboardPage();
     render(page);
-    expect(screen.getByText("City Pulse Dashboard")).toBeInTheDocument();
+    expect(screen.getByText("City Dashboard")).toBeInTheDocument();
   });
 
   it("displays city count in subtitle", async () => {
@@ -100,16 +100,17 @@ describe("DashboardPage", () => {
     mockGetCities.mockResolvedValue(mockCities);
     const page = await DashboardPage();
     render(page);
-    expect(screen.getAllByText("Federal Cooperation")).toHaveLength(2);
-    expect(screen.getAllByText("Data Density")).toHaveLength(2);
-    expect(screen.getAllByText("Political Cover")).toHaveLength(2);
+    // "Fed Coop" appears once in the legend, twice in city cards = 3 total
+    expect(screen.getAllByText("Fed Coop")).toHaveLength(3);
+    expect(screen.getAllByText("Data")).toHaveLength(3);
+    expect(screen.getAllByText("Pol Cover")).toHaveLength(3);
   });
 
   it("handles empty cities list", async () => {
     mockGetCities.mockResolvedValue([]);
     const page = await DashboardPage();
     render(page);
-    expect(screen.getByText("City Pulse Dashboard")).toBeInTheDocument();
+    expect(screen.getByText("City Dashboard")).toBeInTheDocument();
     expect(screen.getByText(/0 cities/)).toBeInTheDocument();
   });
 });
