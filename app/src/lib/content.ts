@@ -35,6 +35,20 @@ export async function getCities(): Promise<CityRow[]> {
 }
 
 /**
+ * Get all enabled city IDs
+ * Used for static params generation
+ */
+export async function getCityIds(): Promise<string[]> {
+  const { data, error } = await supabase
+    .from("cities")
+    .select("id")
+    .eq("enabled", true);
+
+  if (error) throw new Error(`Failed to fetch city IDs: ${error.message}`);
+  return (data as CityRow[]).map((c) => c.id);
+}
+
+/**
  * Get a city by ID
  */
 export async function getCity(id: string): Promise<CityRow | null> {
