@@ -33,6 +33,10 @@ export function PulseBar({
   const displayValue = inverted ? 100 - value : value;
   const clampedValue = Math.max(0, Math.min(100, displayValue));
 
+  if (!value) {
+    return null
+  }
+
   if (compact) {
     return (
       <div className="flex items-center gap-2">
