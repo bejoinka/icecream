@@ -363,7 +363,7 @@ export const PHOENIX_EVENTS: CitySpecialEvents = {
       effects: {
         trust: 15,
         communityDensity: 10,
-        politicalCover: 5,
+        suspicion: -5,
       },
     },
   ],

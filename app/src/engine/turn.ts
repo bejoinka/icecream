@@ -24,6 +24,9 @@ import {
   selectCityEvent,
   selectGlobalEvent,
   pruneExpiredEvents,
+  applyGlobalEventEffects,
+  applyCityEventEffects,
+  applyNeighborhoodEventEffects,
   applyEventEffects,
 } from "./events";
 import { NeighborhoodEventTemplate, CityEventTemplate } from "@/types/city";
@@ -168,12 +171,12 @@ function processEventPhase(state: GameState, ctx: TurnContext): GameState {
   // Apply active event effects to pulses
   let globalPulse = state.globalPulse;
   for (const event of activeEvents.global) {
-    globalPulse = applyEventEffects(globalPulse, event.effects);
+    globalPulse = applyGlobalEventEffects(globalPulse, event.effects);
   }
 
   let cityPulse = state.city.pulse;
   for (const event of activeEvents.city) {
-    cityPulse = applyEventEffects(cityPulse, event.effects);
+    cityPulse = applyCityEventEffects(cityPulse, event.effects);
   }
 
   const neighborhoods = state.city.neighborhoods.map((n) => {
@@ -182,7 +185,7 @@ function processEventPhase(state: GameState, ctx: TurnContext): GameState {
     );
     let pulse = n.pulse;
     for (const event of relevantEvents) {
-      pulse = applyEventEffects(pulse, event.effects);
+      pulse = applyNeighborhoodEventEffects(pulse, event.effects);
     }
     return { ...n, pulse };
   });

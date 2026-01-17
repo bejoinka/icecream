@@ -3,6 +3,8 @@
  * Based on SYSTEMS_PULSES_AND_EVENTS.md spec
  */
 
+import type { GlobalPulse, CityPulse, NeighborhoodPulse } from "./pulse";
+
 /** Global event types */
 export type GlobalEventType = "Executive" | "Judicial" | "Media" | "Security";
 
@@ -40,12 +42,7 @@ export interface GlobalEvent {
   /** Turn when event started */
   startTurn: number;
   /** Effects on GlobalPulse (additive modifiers) */
-  effects: Partial<{
-    enforcementClimate: number;
-    mediaNarrative: number;
-    judicialAlignment: number;
-    politicalVolatility: number;
-  }>;
+  effects: Partial<Record<keyof GlobalPulse, number>>;
 }
 
 /**
@@ -63,13 +60,7 @@ export interface CityEvent {
   startTurn: number;
   durationDays: number;
   /** Effects on CityPulse */
-  effects: Partial<{
-    federalCooperation: number;
-    dataDensity: number;
-    politicalCover: number;
-    civilSocietyCapacity: number;
-    bureaucraticInertia: number;
-  }>;
+  effects: Partial<Record<keyof CityPulse, number>>;
 }
 
 /**
@@ -85,13 +76,7 @@ export interface NeighborhoodEvent {
   description: string;
   startTurn: number;
   /** Effects on NeighborhoodPulse */
-  effects: Partial<{
-    trust: number;
-    suspicion: number;
-    enforcementVisibility: number;
-    communityDensity: number;
-    economicPrecarity: number;
-  }>;
+  effects: Partial<Record<keyof NeighborhoodPulse, number>>;
 }
 
 /** Union type for all events */
