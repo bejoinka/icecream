@@ -361,9 +361,8 @@ export const PHOENIX_EVENTS: CitySpecialEvents = {
         "The town of Guadalupe, surrounded by Phoenix, hosts community meeting on local sanctuary measures.",
       weight: 2,
       effects: {
-        trust: 15,
+        trust: 20,
         communityDensity: 10,
-        politicalCover: 5,
       },
     },
   ],

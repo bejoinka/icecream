@@ -168,12 +168,12 @@ function processEventPhase(state: GameState, ctx: TurnContext): GameState {
   // Apply active event effects to pulses
   let globalPulse = state.globalPulse;
   for (const event of activeEvents.global) {
-    globalPulse = applyEventEffects(globalPulse, event.effects);
+    globalPulse = applyEventEffects(globalPulse as any, event.effects) as typeof state.globalPulse;
   }
 
   let cityPulse = state.city.pulse;
   for (const event of activeEvents.city) {
-    cityPulse = applyEventEffects(cityPulse, event.effects);
+    cityPulse = applyEventEffects(cityPulse as any, event.effects) as typeof state.city.pulse;
   }
 
   const neighborhoods = state.city.neighborhoods.map((n) => {
@@ -182,7 +182,7 @@ function processEventPhase(state: GameState, ctx: TurnContext): GameState {
     );
     let pulse = n.pulse;
     for (const event of relevantEvents) {
-      pulse = applyEventEffects(pulse, event.effects);
+      pulse = applyEventEffects(pulse as any, event.effects) as typeof n.pulse;
     }
     return { ...n, pulse };
   });
@@ -374,7 +374,7 @@ function processConsequencePhase(
 
   let family = { ...state.family };
   for (const choice of selectedChoices) {
-    family = applyEventEffects(family, choice.effects) as FamilyImpact;
+    family = applyEventEffects(family as any, choice.effects) as FamilyImpact;
   }
 
   // Record the choice

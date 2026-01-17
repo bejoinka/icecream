@@ -317,23 +317,22 @@ export function shouldTriggerGlobalEvent(pulse: GlobalPulse): boolean {
 
 /**
  * Apply event effects to pulses (additive)
+ * Generic T is the pulse type (e.g., GlobalPulse, CityPulse, etc.)
+ * Effects are partial records with number values that match T's keys
  */
 export function applyEventEffects<
-  T extends Record<string, number>,
-  E extends Partial<Record<keyof T, number>>
->(pulse: T, effects: E): T {
-  const result = { ...pulse };
+  T extends { [key: string]: number }
+>(pulse: T, effects: Partial<Record<string, number>>): T {
+  const result: any = { ...pulse };
 
   for (const [key, value] of Object.entries(effects)) {
     if (key in result && typeof value === "number") {
-      (result as Record<string, number>)[key] = Math.max(
-        0,
-        Math.min(100, (result as Record<string, number>)[key] + value)
-      );
+      const currentValue = result[key] as number;
+      result[key] = Math.max(0, Math.min(100, currentValue + value));
     }
   }
 
-  return result;
+  return result as T;
 }
 
 /**
