@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCity, getCityIds } from "@/lib/content";
+import { getCityIds, getCityWithNeighborhoods } from "@/lib/content";
 import { PulseBar } from "@/components/dashboard/PulseBar";
-import { Neighborhood } from "@/types/city";
+import type { NeighborhoodRow } from "@/types/database";
 
 interface CityPageProps {
   params: Promise<{ id: string }>;
 }
 
 export async function generateStaticParams() {
-  return getCityIds().map((id) => ({ id }));
+  const ids = await getCityIds();
+  return ids.map((id) => ({ id }));
 }
 
 export async function generateMetadata({
   params,
 }: CityPageProps): Promise<Metadata> {
   const { id } = await params;
-  const city = getCity(id);
+  const city = await getCityWithNeighborhoods(id);
 
   if (!city) {
     return { title: "City Not Found" };
@@ -29,7 +30,7 @@ export async function generateMetadata({
   };
 }
 
-function NeighborhoodCard({ neighborhood }: { neighborhood: Neighborhood }) {
+function NeighborhoodCard({ neighborhood }: { neighborhood: NeighborhoodRow }) {
   return (
     <div className="bg-zinc-900 rounded-lg border border-zinc-700 p-4">
       <div className="mb-3">
@@ -77,7 +78,7 @@ function NeighborhoodCard({ neighborhood }: { neighborhood: Neighborhood }) {
 
 export default async function CityPage({ params }: CityPageProps) {
   const { id } = await params;
-  const city = getCity(id);
+  const city = await getCityWithNeighborhoods(id);
 
   if (!city) {
     notFound();
@@ -162,7 +163,7 @@ export default async function CityPage({ params }: CityPageProps) {
             Why Play Here?
           </h2>
           <p className="text-zinc-300 text-sm leading-relaxed">
-            {city.playabilityRationale}
+            {city.playability_rationale}
           </p>
         </section>
 

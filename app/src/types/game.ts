@@ -3,7 +3,7 @@
  * Stored in Redis per session
  */
 
-import { GlobalPulse, CityPulse, NeighborhoodPulse, FamilyImpact } from "./pulse";
+import { GlobalPulse, CityPulse, NeighborhoodPulse, FamilyImpact, UPDATE_CADENCE } from "./pulse";
 import { ActiveEvents, GlobalEvent, CityEvent, NeighborhoodEvent } from "./event";
 import { CityProfile, Neighborhood } from "./city";
 
@@ -137,16 +137,7 @@ export interface NewGameParams {
   };
 }
 
-/** Update cadence constants */
-export const UPDATE_CADENCE = {
-  /** Neighborhood pulse updates every turn */
-  NEIGHBORHOOD: 1,
-  /** City pulse updates every 7 turns */
-  CITY: 7,
-  /** Global pulse updates every 14-28 turns */
-  GLOBAL_MIN: 14,
-  GLOBAL_MAX: 28,
-} as const;
+// Note: UPDATE_CADENCE is imported from pulse.ts and re-exported via index.ts
 
 /** Default game length in turns */
 export const DEFAULT_MAX_TURNS = 80;

@@ -55,8 +55,8 @@ function CityCard({ city }: { city: CitySummary }) {
   );
 }
 
-export default function DashboardPage() {
-  const cities = getCities();
+export default async function DashboardPage() {
+  const cities = await getCities();
 
   return (
     <main className="min-h-screen bg-black p-8">

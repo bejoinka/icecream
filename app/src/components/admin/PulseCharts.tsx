@@ -60,6 +60,33 @@ export interface PulseChartsProps {
   emptyMessage?: string;
 }
 
+/** History types for pulse data */
+export interface GlobalPulseHistory {
+  turn: number;
+  enforcementClimate: number;
+  mediaNarrative: number;
+  judicialAlignment: number;
+  politicalVolatility: number;
+}
+
+export interface CityPulseHistory {
+  turn: number;
+  federalCooperation: number;
+  dataDensity: number;
+  politicalCover: number;
+  civilSocietyCapacity: number;
+  bureaucraticInertia: number;
+}
+
+export interface NeighborhoodPulseHistory {
+  turn: number;
+  trust: number;
+  suspicion: number;
+  enforcementVisibility: number;
+  communityDensity: number;
+  economicPrecarity: number;
+}
+
 // =============================================================================
 // Metric Labels
 // =============================================================================
