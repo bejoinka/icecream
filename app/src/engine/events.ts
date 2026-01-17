@@ -288,6 +288,12 @@ export function selectGlobalEvent(
   const magnitude = randomSeverity([1, 3 + Math.floor(pulse.politicalVolatility / 30)]);
   const durationDays = 7 + magnitude * 7; // 14-35 days based on magnitude
 
+  // Build effects with proper typing
+  const effects: GlobalEvent["effects"] = {};
+  for (const [key, value] of Object.entries(selected.effects)) {
+    (effects as Record<string, number>)[key] = value * magnitude;
+  }
+
   return {
     id: generateEventId(),
     type: selected.type,
@@ -296,9 +302,7 @@ export function selectGlobalEvent(
     title: selected.title,
     description: selected.description,
     startTurn: turn,
-    effects: Object.fromEntries(
-      Object.entries(selected.effects).map(([k, v]) => [k, v * magnitude])
-    ) as GlobalEvent["effects"],
+    effects,
   };
 }
 
@@ -316,19 +320,102 @@ export function shouldTriggerGlobalEvent(pulse: GlobalPulse): boolean {
 // =============================================================================
 
 /**
- * Apply event effects to pulses (additive)
- * Generic T is the pulse type (e.g., GlobalPulse, CityPulse, etc.)
- * Effects are partial records with number values that match T's keys
+ * Apply global event effects to GlobalPulse
+ */
+export function applyGlobalEventEffects(
+  pulse: GlobalPulse,
+  effects: GlobalEvent["effects"]
+): GlobalPulse {
+  const result: GlobalPulse = { ...pulse };
+
+  for (const key in effects) {
+    if (Object.prototype.hasOwnProperty.call(effects, key)) {
+      const value = (effects as Record<string, number>)[key];
+      if (typeof value === "number" && key in result) {
+        const k = key as keyof GlobalPulse;
+        const currentValue = result[k];
+        if (typeof currentValue === "number") {
+          (result[k] as number) = Math.max(0, Math.min(100, currentValue + value));
+        }
+      }
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Apply city event effects to CityPulse
+ */
+export function applyCityEventEffects(
+  pulse: CityPulse,
+  effects: CityEvent["effects"]
+): CityPulse {
+  const result: CityPulse = { ...pulse };
+
+  for (const key in effects) {
+    if (Object.prototype.hasOwnProperty.call(effects, key)) {
+      const value = (effects as Record<string, number>)[key];
+      if (typeof value === "number" && key in result) {
+        const k = key as keyof CityPulse;
+        const currentValue = result[k];
+        if (typeof currentValue === "number") {
+          (result[k] as number) = Math.max(0, Math.min(100, currentValue + value));
+        }
+      }
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Apply neighborhood event effects to NeighborhoodPulse
+ */
+export function applyNeighborhoodEventEffects(
+  pulse: NeighborhoodPulse,
+  effects: NeighborhoodEvent["effects"]
+): NeighborhoodPulse {
+  const result: NeighborhoodPulse = { ...pulse };
+
+  for (const key in effects) {
+    if (Object.prototype.hasOwnProperty.call(effects, key)) {
+      const value = (effects as Record<string, number>)[key];
+      if (typeof value === "number" && key in result) {
+        const k = key as keyof NeighborhoodPulse;
+        const currentValue = result[k];
+        if (typeof currentValue === "number") {
+          (result[k] as number) = Math.max(0, Math.min(100, currentValue + value));
+        }
+      }
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Apply event effects to pulses (additive) - generic version
+ * @deprecated Use typed versions: applyGlobalEventEffects, applyCityEventEffects, applyNeighborhoodEventEffects
  */
 export function applyEventEffects<
-  T extends { [key: string]: number }
->(pulse: T, effects: Partial<Record<string, number>>): T {
-  const result: any = { ...pulse };
+  T extends Record<string, number>,
+  E extends Partial<Record<keyof T, number>>
+>(pulse: T, effects: E): T {
+  const result: T = { ...pulse };
 
-  for (const [key, value] of Object.entries(effects)) {
-    if (key in result && typeof value === "number") {
-      const currentValue = result[key] as number;
-      result[key] = Math.max(0, Math.min(100, currentValue + value));
+  for (const key in effects) {
+    if (Object.prototype.hasOwnProperty.call(effects, key) && key in result) {
+      const value = effects[key];
+      if (typeof value === "number") {
+        const currentValue = result[key as keyof T];
+        if (typeof currentValue === "number") {
+          (result[key as keyof T] as number) = Math.max(
+            0,
+            Math.min(100, currentValue + value)
+          );
+        }
+      }
     }
   }
 

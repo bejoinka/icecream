@@ -13,3 +13,6 @@ export * from "./city";
 
 // Complete game state
 export * from "./game";
+
+// Database types (Supabase)
+export * from "./database";
