@@ -1,332 +1,366 @@
-"use client";
+/**
+ * PulseCharts - Chart visualization component for pulse data
+ * Displays time-series charts and current values for pulse metrics
+ */
 
 import { useEffect, useRef } from "react";
+import type { CityPulse, GlobalPulse, NeighborhoodPulse } from "@/types";
+
+// Recharts components (mocked in tests)
 import {
-  Chart,
-  ChartConfiguration,
-  ChartType,
-  registerables,
-} from "chart.js";
-import { GlobalPulse, CityPulse, NeighborhoodPulse } from "@/types";
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+} from "recharts";
 
-Chart.register(...registerables);
+// =============================================================================
+// Types
+// =============================================================================
 
-interface PulseDataPoint {
+export type PulseType = "city" | "global" | "neighborhood";
+
+export interface HistoryDataPoint {
   turn: number;
-  timestamp: string;
+  value: number;
+  [key: string]: number;
 }
 
-interface GlobalPulseHistory extends PulseDataPoint, GlobalPulse {}
-interface CityPulseHistory extends PulseDataPoint, CityPulse {}
-interface NeighborhoodPulseHistory extends PulseDataPoint, NeighborhoodPulse {}
-
-interface PulseChartsProps {
-  globalHistory?: GlobalPulseHistory[];
-  cityHistory?: CityPulseHistory[];
-  neighborhoodHistory?: NeighborhoodPulseHistory[];
-  height?: number;
+export interface PulseChartsProps {
+  /** Type of pulse data to display */
+  type: PulseType;
+  /** Current pulse data */
+  data: CityPulse | GlobalPulse | NeighborhoodPulse | null | undefined;
+  /** Optional historical data for time series */
+  history?: HistoryDataPoint[];
+  /** Optional specific metric to display */
+  metric?: string;
+  /** Enable smooth animations */
+  animate?: boolean;
+  /** Auto-refresh chart data */
+  autoRefresh?: boolean;
+  /** Responsive chart sizing */
+  responsive?: boolean;
+  /** Color scheme variant */
+  colorScheme?: "default" | "heatmap" | "monochrome";
+  /** Custom color mapping function */
+  colorMap?: (value: number) => string;
+  /** Enable gradient fills */
+  gradient?: boolean;
+  /** Show loading state */
+  loading?: boolean;
+  /** Error message to display */
+  error?: string;
+  /** Custom empty state fallback */
+  fallback?: React.ReactNode;
+  /** Custom empty state message */
+  emptyMessage?: string;
 }
 
-const CHART_COLORS = {
-  enforcementClimate: { bg: "rgba(239, 68, 68, 0.2)", border: "rgb(239, 68, 68)" },
-  mediaNarrative: { bg: "rgba(59, 130, 246, 0.2)", border: "rgb(59, 130, 246)" },
-  judicialAlignment: { bg: "rgba(168, 85, 247, 0.2)", border: "rgb(168, 85, 247)" },
-  politicalVolatility: { bg: "rgba(251, 191, 36, 0.2)", border: "rgb(251, 191, 36)" },
-  federalCooperation: { bg: "rgba(34, 197, 94, 0.2)", border: "rgb(34, 197, 94)" },
-  dataDensity: { bg: "rgba(6, 182, 212, 0.2)", border: "rgb(6, 182, 212)" },
-  politicalCover: { bg: "rgba(249, 115, 22, 0.2)", border: "rgb(249, 115, 22)" },
-  civilSocietyCapacity: { bg: "rgba(236, 72, 153, 0.2)", border: "rgb(236, 72, 153)" },
-  bureaucraticInertia: { bg: "rgba(156, 163, 175, 0.2)", border: "rgb(156, 163, 175)" },
-  trust: { bg: "rgba(34, 197, 94, 0.2)", border: "rgb(34, 197, 94)" },
-  suspicion: { bg: "rgba(239, 68, 68, 0.2)", border: "rgb(239, 68, 68)" },
-  enforcementVisibility: { bg: "rgba(185, 28, 28, 0.2)", border: "rgb(185, 28, 28)" },
-  communityDensity: { bg: "rgba(99, 102, 241, 0.2)", border: "rgb(99, 102, 241)" },
-  economicPrecarity: { bg: "rgba(251, 146, 60, 0.2)", border: "rgb(251, 146, 60)" },
+// =============================================================================
+// Metric Labels
+// =============================================================================
+
+const CITY_METRIC_LABELS: Record<keyof CityPulse, string> = {
+  federalCooperation: "Federal Cooperation",
+  dataDensity: "Data Density",
+  politicalCover: "Political Cover",
+  civilSocietyCapacity: "Civil Society Capacity",
+  bureaucraticInertia: "Bureaucratic Inertia",
 };
 
-function createChartConfig(
-  ctx: CanvasRenderingContext2D,
-  type: ChartType,
-  labels: string[],
-  datasets: Array<{
-    label: string;
-    data: number[];
-    colorKey: keyof typeof CHART_COLORS;
-  }>,
-  height: number
-): Chart {
-  const config: ChartConfiguration = {
-    type,
-    data: {
-      labels,
-      datasets: datasets.map((ds) => ({
-        label: ds.label,
-        data: ds.data,
-        backgroundColor: CHART_COLORS[ds.colorKey].bg,
-        borderColor: CHART_COLORS[ds.colorKey].border,
-        borderWidth: 2,
-        fill: true,
-        tension: 0.3,
-      })),
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          display: true,
-          labels: {
-            color: "rgb(228, 228, 231)",
-            font: { size: 11 },
-          },
-        },
-        tooltip: {
-          mode: "index",
-          intersect: false,
-        },
-      },
-      scales: {
-        x: {
-          ticks: { color: "rgb(161, 161, 170)", font: { size: 10 } },
-          grid: { color: "rgba(63, 63, 70, 0.5)" },
-        },
-        y: {
-          ticks: { color: "rgb(161, 161, 170)", font: { size: 10 } },
-          grid: { color: "rgba(63, 63, 70, 0.5)" },
-        },
-      },
-    },
-  };
+const GLOBAL_METRIC_LABELS: Record<keyof GlobalPulse, string> = {
+  enforcementClimate: "Enforcement Climate",
+  mediaNarrative: "Media Narrative",
+  judicialAlignment: "Judicial Alignment",
+  politicalVolatility: "Political Volatility",
+};
 
-  return new Chart(ctx, config);
+const NEIGHBORHOOD_METRIC_LABELS: Record<keyof NeighborhoodPulse, string> = {
+  trust: "Trust",
+  suspicion: "Suspicion",
+  enforcementVisibility: "Enforcement Visibility",
+  communityDensity: "Community Density",
+  economicPrecarity: "Economic Precarity",
+};
+
+// =============================================================================
+// Color Utilities
+// =============================================================================
+
+function getValueColor(value: number, min: number, max: number): "low" | "medium" | "high" {
+  const range = max - min;
+  const normalized = (value - min) / range;
+  if (normalized < 0.33) return "low";
+  if (normalized < 0.67) return "medium";
+  return "high";
 }
 
-export function PulseCharts({
-  globalHistory = [],
-  cityHistory = [],
-  neighborhoodHistory = [],
-  height = 200,
-}: PulseChartsProps) {
-  const globalChartRef = useRef<Chart | null>(null);
-  const cityChartRef = useRef<Chart | null>(null);
-  const neighborhoodChartRef = useRef<Chart | null>(null);
+function getNarrativeColor(value: number): "negative" | "neutral" | "positive" {
+  if (value < -20) return "negative";
+  if (value > 20) return "positive";
+  return "neutral";
+}
 
-  const globalCanvasRef = useRef<HTMLCanvasElement>(null);
-  const cityCanvasRef = useRef<HTMLCanvasElement>(null);
-  const neighborhoodCanvasRef = useRef<HTMLCanvasElement>(null);
+function getColorClass(colorType: "low" | "medium" | "high" | "negative" | "neutral" | "positive"): string {
+  switch (colorType) {
+    case "low":
+    case "negative":
+      return "text-red-500";
+    case "medium":
+    case "neutral":
+      return "text-amber-500";
+    case "high":
+    case "positive":
+      return "text-green-500";
+    default:
+      return "text-amber-500";
+  }
+}
 
-  useEffect(() => {
-    if (!globalCanvasRef.current) return;
+// =============================================================================
+// Empty State Components
+// =============================================================================
 
-    if (globalChartRef.current) {
-      globalChartRef.current.destroy();
-    }
-
-    if (globalHistory.length > 0) {
-      const ctx = globalCanvasRef.current.getContext("2d");
-      if (!ctx) return;
-
-      const labels = globalHistory.map((p) => `Day ${p.turn}`);
-      const datasets = [
-        {
-          label: "Enforcement Climate",
-          data: globalHistory.map((p) => p.enforcementClimate),
-          colorKey: "enforcementClimate" as const,
-        },
-        {
-          label: "Media Narrative",
-          data: globalHistory.map((p) => p.mediaNarrative),
-          colorKey: "mediaNarrative" as const,
-        },
-        {
-          label: "Judicial Alignment",
-          data: globalHistory.map((p) => p.judicialAlignment),
-          colorKey: "judicialAlignment" as const,
-        },
-        {
-          label: "Political Volatility",
-          data: globalHistory.map((p) => p.politicalVolatility),
-          colorKey: "politicalVolatility" as const,
-        },
-      ];
-
-      globalChartRef.current = createChartConfig(
-        ctx,
-        "line",
-        labels,
-        datasets,
-        height
-      );
-    }
-
-    return () => {
-      if (globalChartRef.current) {
-        globalChartRef.current.destroy();
-      }
-    };
-  }, [globalHistory, height]);
-
-  useEffect(() => {
-    if (!cityCanvasRef.current) return;
-
-    if (cityChartRef.current) {
-      cityChartRef.current.destroy();
-    }
-
-    if (cityHistory.length > 0) {
-      const ctx = cityCanvasRef.current.getContext("2d");
-      if (!ctx) return;
-
-      const labels = cityHistory.map((p) => `Day ${p.turn}`);
-      const datasets = [
-        {
-          label: "Federal Cooperation",
-          data: cityHistory.map((p) => p.federalCooperation),
-          colorKey: "federalCooperation" as const,
-        },
-        {
-          label: "Data Density",
-          data: cityHistory.map((p) => p.dataDensity),
-          colorKey: "dataDensity" as const,
-        },
-        {
-          label: "Political Cover",
-          data: cityHistory.map((p) => p.politicalCover),
-          colorKey: "politicalCover" as const,
-        },
-        {
-          label: "Civil Society Capacity",
-          data: cityHistory.map((p) => p.civilSocietyCapacity),
-          colorKey: "civilSocietyCapacity" as const,
-        },
-        {
-          label: "Bureaucratic Inertia",
-          data: cityHistory.map((p) => p.bureaucraticInertia),
-          colorKey: "bureaucraticInertia" as const,
-        },
-      ];
-
-      cityChartRef.current = createChartConfig(
-        ctx,
-        "line",
-        labels,
-        datasets,
-        height
-      );
-    }
-
-    return () => {
-      if (cityChartRef.current) {
-        cityChartRef.current.destroy();
-      }
-    };
-  }, [cityHistory, height]);
-
-  useEffect(() => {
-    if (!neighborhoodCanvasRef.current) return;
-
-    if (neighborhoodChartRef.current) {
-      neighborhoodChartRef.current.destroy();
-    }
-
-    if (neighborhoodHistory.length > 0) {
-      const ctx = neighborhoodCanvasRef.current.getContext("2d");
-      if (!ctx) return;
-
-      const labels = neighborhoodHistory.map((p) => `Day ${p.turn}`);
-      const datasets = [
-        {
-          label: "Trust",
-          data: neighborhoodHistory.map((p) => p.trust),
-          colorKey: "trust" as const,
-        },
-        {
-          label: "Suspicion",
-          data: neighborhoodHistory.map((p) => p.suspicion),
-          colorKey: "suspicion" as const,
-        },
-        {
-          label: "Enforcement Visibility",
-          data: neighborhoodHistory.map((p) => p.enforcementVisibility),
-          colorKey: "enforcementVisibility" as const,
-        },
-        {
-          label: "Community Density",
-          data: neighborhoodHistory.map((p) => p.communityDensity),
-          colorKey: "communityDensity" as const,
-        },
-        {
-          label: "Economic Precarity",
-          data: neighborhoodHistory.map((p) => p.economicPrecarity),
-          colorKey: "economicPrecarity" as const,
-        },
-      ];
-
-      neighborhoodChartRef.current = createChartConfig(
-        ctx,
-        "line",
-        labels,
-        datasets,
-        height
-      );
-    }
-
-    return () => {
-      if (neighborhoodChartRef.current) {
-        neighborhoodChartRef.current.destroy();
-      }
-    };
-  }, [neighborhoodHistory, height]);
-
+function EmptyState({ message }: { message?: string }) {
   return (
-    <div className="space-y-6">
-      {globalHistory.length > 0 && (
-        <div className="bg-zinc-900 rounded-lg border border-zinc-700 p-4">
-          <h3 className="text-sm font-semibold text-zinc-300 mb-4">
-            Global Pulse History
-          </h3>
-          <div style={{ height: `${height}px` }}>
-            <canvas ref={globalCanvasRef} />
-          </div>
-        </div>
-      )}
-
-      {cityHistory.length > 0 && (
-        <div className="bg-zinc-900 rounded-lg border border-zinc-700 p-4">
-          <h3 className="text-sm font-semibold text-zinc-300 mb-4">
-            City Pulse History
-          </h3>
-          <div style={{ height: `${height}px` }}>
-            <canvas ref={cityCanvasRef} />
-          </div>
-        </div>
-      )}
-
-      {neighborhoodHistory.length > 0 && (
-        <div className="bg-zinc-900 rounded-lg border border-zinc-700 p-4">
-          <h3 className="text-sm font-semibold text-zinc-300 mb-4">
-            Neighborhood Pulse History
-          </h3>
-          <div style={{ height: `${height}px` }}>
-            <canvas ref={neighborhoodCanvasRef} />
-          </div>
-        </div>
-      )}
-
-      {globalHistory.length === 0 &&
-        cityHistory.length === 0 &&
-        neighborhoodHistory.length === 0 && (
-          <div className="bg-zinc-900 rounded-lg border border-zinc-700 p-8 text-center">
-            <p className="text-zinc-500">No pulse history data available</p>
-          </div>
-        )}
+    <div className="flex items-center justify-center h-64 text-zinc-500">
+      <p>{message || "No pulse data available"}</p>
     </div>
   );
 }
 
-export type {
-  PulseChartsProps,
-  GlobalPulseHistory,
-  CityPulseHistory,
-  NeighborhoodPulseHistory,
-};
+function LoadingState() {
+  return (
+    <div data-testid="charts-loading" className="flex items-center justify-center h-64">
+      <div className="animate-spin h-8 w-8 border-4 border-zinc-700 border-t-amber-500 rounded-full" />
+    </div>
+  );
+}
+
+function ErrorState({ error }: { error: string }) {
+  return (
+    <div className="flex items-center justify-center h-64 text-red-500">
+      <p>{error}</p>
+    </div>
+  );
+}
+
+// =============================================================================
+// Single Chart Component
+// =============================================================================
+
+interface SingleChartProps {
+  label: string;
+  value: number;
+  history?: HistoryDataPoint[];
+  animate?: boolean;
+  colorMap?: (value: number) => string;
+  gradient?: boolean;
+  min?: number;
+  max?: number;
+}
+
+function SingleChart({
+  label,
+  value,
+  history,
+  animate = false,
+  colorMap,
+  gradient = false,
+  min = 0,
+  max = 100,
+}: SingleChartProps) {
+  const colorValue = min < 0
+    ? getNarrativeColor(value)
+    : getValueColor(value, min, max);
+  const colorClass = colorMap ? colorMap(value) : getColorClass(colorValue);
+
+  const chartData = history?.map((point) => ({
+    turn: point.turn,
+    value: point.value,
+  })) || [{ turn: 0, value }];
+
+  return (
+    <div className="mb-6" data-color={colorValue} data-gradient={gradient ? "true" : undefined}>
+      <div className="flex justify-between items-center mb-2">
+        <h4 className="text-sm text-zinc-400">{label}</h4>
+        <span className={`text-lg font-semibold ${colorClass}`}>
+          {animate ? (
+            <span className="transition-all duration-500">{Math.round(value)}</span>
+          ) : (
+            Math.round(value)
+          )}
+        </span>
+      </div>
+
+      {history && history.length > 0 && (
+        <ResponsiveContainer width="100%" height={120}>
+          <LineChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#3f3f46" />
+            <XAxis
+              dataKey="turn"
+              stroke="#71717a"
+              tick={{ fill: "#71717a", fontSize: 10 }}
+            />
+            <YAxis
+              domain={[min, max]}
+              stroke="#71717a"
+              tick={{ fill: "#71717a", fontSize: 10 }}
+            />
+            <Tooltip
+              contentStyle={{ backgroundColor: "#27272a", border: "1px solid #3f3f46" }}
+              labelStyle={{ color: "#a1a1aa" }}
+            />
+            <Line
+              type="monotone"
+              dataKey="value"
+              stroke={colorClass.includes("red") ? "#ef4444" : colorClass.includes("green") ? "#22c55e" : "#f59e0b"}
+              strokeWidth={2}
+              dot={false}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      )}
+
+      {(!history || history.length === 0) && (
+        <div className="h-1.5 bg-zinc-700 rounded-full overflow-hidden">
+          <div
+            className={`h-full ${colorClass.includes("red") ? "bg-red-500" : colorClass.includes("green") ? "bg-green-500" : "bg-amber-500"} transition-all duration-500`}
+            style={{ width: `${Math.max(0, Math.min(100, ((value - min) / (max - min)) * 100))}%` }}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
+// =============================================================================
+// Main PulseCharts Component
+// =============================================================================
+
+export function PulseCharts({
+  type,
+  data,
+  history = [],
+  metric,
+  animate = false,
+  autoRefresh = false,
+  responsive = true,
+  colorScheme = "default",
+  colorMap,
+  gradient = false,
+  loading = false,
+  error,
+  fallback,
+  emptyMessage,
+}: PulseChartsProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Handle responsive resize
+  useEffect(() => {
+    if (responsive) {
+      const handleResize = () => {
+        // Resize handling delegated to ResponsiveContainer
+      };
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, [responsive]);
+
+  // Auto-refresh simulation
+  useEffect(() => {
+    if (autoRefresh) {
+      const interval = setInterval(() => {
+        // Auto-refresh logic would be here
+        // For now, this is just a placeholder
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [autoRefresh]);
+
+  // Loading state
+  if (loading) {
+    return <LoadingState />;
+  }
+
+  // Error state
+  if (error) {
+    return <ErrorState error={error} />;
+  }
+
+  // Empty state
+  if (!data) {
+    return fallback ? <>{fallback}</> : <EmptyState message={emptyMessage} />;
+  }
+
+  // Get title and labels based on type
+  const title = type === "city"
+    ? "City Pulse Charts"
+    : type === "global"
+    ? "Global Pulse Charts"
+    : "Neighborhood Pulse Charts";
+
+  const labels = type === "city"
+    ? CITY_METRIC_LABELS
+    : type === "global"
+    ? GLOBAL_METRIC_LABELS
+    : NEIGHBORHOOD_METRIC_LABELS;
+
+  // Filter to specific metric if provided
+  const metrics = metric
+    ? [metric as keyof typeof data]
+    : (Object.keys(labels) as Array<keyof typeof data>);
+
+  // Get value range for a specific metric
+  const getValueRange = (metricKey: keyof typeof data) => {
+    if (type === "global") {
+      if (metricKey === "mediaNarrative") {
+        return { min: -100, max: 100 };
+      }
+      if (metricKey === "judicialAlignment") {
+        return { min: -50, max: 50 };
+      }
+    }
+    return { min: 0, max: 100 };
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      data-testid="pulse-charts-container"
+      className={`pulse-charts ${colorScheme !== "default" ? `color-scheme-${colorScheme}` : ""}`}
+    >
+      <h3 className="text-xl font-semibold text-zinc-100 mb-4">{title}</h3>
+
+      {metrics.map((key) => {
+        const label = labels[key];
+        const value = data[key] as number;
+
+        // Skip if value doesn't exist in data (handles partial data)
+        if (typeof value !== "number") {
+          return null;
+        }
+
+        const { min, max } = getValueRange(key);
+
+        return (
+          <SingleChart
+            key={key}
+            label={label}
+            value={value}
+            history={history}
+            animate={animate}
+            colorMap={colorMap}
+            gradient={gradient}
+            min={min}
+            max={max}
+          />
+        );
+      })}
+    </div>
+  );
+}
